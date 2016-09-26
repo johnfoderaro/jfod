@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>{{ title }}</title>
+  <link rel="stylesheet" href="/css/main.min.css">
+  <script>
+  (function(){
+    var link;
+    var script = document.createElement('script');
+    var head   = document.getElementsByTagName('head')[0];
+    var url    = window.location.href;
+    function livereload() {
+      link = url.replace(/([:])\w+/, ':35729/livereload.js');
+      link = link.substring(0, link.indexOf('.js'));
+      return link + '.js';
+    }
+    script.setAttribute('src', livereload());
+    head.appendChild(script);
+  })();
+  </script>
+</head>
+<body>
+  <div class="container">
+    <header>
+      <h1>John Foderaro</h1>
+      <h2>JavaScript Developer</h2>
+    </header>
+    <main>
+      <img src="/img/john-foderaro.jpg"/>
+      {{{contents}}}
+    </main>
+    <nav>
+      <ul>
+        <li><a href="https://www.github.com/johnfoderaro">GitHub</a></li>
+        <li><a href="https://www.npmjs.com/~johnfoderaro">npm</a></li>
+        <li><a href="https://www.twitter.com/johnfoderaro">Twitter</a></li>
+        <li><a href="https://www.linkedin.com/in/jfoderaro">LinkedIn</a></li>
+        <li><a href="#">Blog</a></li>
+        <li><a href="#">Resume</a></li>
+        <li><a href="#">Contact</a></li>
+      </ul>
+    </nav>
+    <footer>
+      <p>Copyright John Foderaro © 2016<br>Built with <span class="heart">&#9829;</span> in New Jersey.</p>
+    </footer>
+  </div>
+  <script src="/js/app.min.js"></script>
+</body>
+</html>

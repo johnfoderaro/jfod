@@ -1,0 +1,65 @@
+body {
+  background-image:
+    linear-gradient(rgba(0, 0, 0, 0.45), rgba(0, 0, 0, 0.45)),
+    url('/img/background.jpg');
+  background-color: $body-color;
+  background-repeat: repeat-y;
+  background-size: cover;
+  color: $text-color;
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  height: 100vh;
+  font-family: 'Raleway', sans-serif;
+
+  @media(min-width: $large-breakpoint) {
+    background-position: left;
+  }
+}
+
+main {
+  padding-top: 4rem;
+  padding-bottom: 4rem;
+  img {
+    display: block;
+    max-width: 16rem;
+    margin-right: auto;
+    margin-left: auto;
+    border-radius: 50%;
+  }
+  li {
+    margin-right: .25rem;
+    margin-left: .25rem;
+    &:not(:last-child) {
+      &::after {
+        margin-left: 1rem;
+        font-size: 2rem;
+        content:"\00b7";
+      }
+    }
+  }
+}
+
+nav {
+  padding-top: 2rem;
+  padding-bottom: 2rem;
+  li {
+    font-size: 1.35em;
+    margin-right: .5rem;
+    margin-left: .5rem;
+    a {
+      font-weight: bold;
+    }
+  }
+}
+
+footer {
+  p {
+    font-size: 1em;
+  }
+}
+
+.container {
+  @include content-wrapper;
+}
