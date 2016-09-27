@@ -12,10 +12,12 @@ const shell = require('gulp-shell');
 const gutil = require('gulp-util');
 const babel = require('gulp-babel');
 const imagemin = require('gulp-imagemin');
-const imageminMozjpeg = require('imagemin-mozjpeg');
+// const imageminMozjpeg = require('imagemin-mozjpeg');
 const pump = require('pump');
 
 // Express server
+const os = require('os');
+const interfaces = os.networkInterfaces();
 const express = require('express');
 const server = express();
 const port = 3000;
@@ -75,18 +77,26 @@ gulp.task('build', () => {
 
 // Express server
 gulp.task('server', () => {
+  let addresses = [];
+  for (let i in interfaces) {
+    for (let n in interfaces[i]) {
+      let address = interfaces[i][n];
+      if (address.family === 'IPv4' && !address.internal) {
+        addresses.push(address.address);
+      }
+    }
+  }
   server.use(express.static(__dirname + '/build/'));
-  server.listen(port, () => gutil.log(`Server listening on port ${port}... `));
+  server.listen(port, () => {
+    for (let i = 0; i < addresses.length; i++) {
+      gutil.log(`Server listening at ${gutil.colors.white(`${addresses[i]}:${port}`)}`);
+    }
+  });
   livereload.listen();
 });
 
-// Default "gulp" task for Express server, watching, livereload
-// -- basically everything listed above
-gulp.task('default', ['build'], () => {
-  server.use(express.static(__dirname + '/build/'));
-  server.listen(port, () => gutil.log(`Server listening on port ${port}... `));
-  livereload.listen();
-  gulp.watch(['src/img/src/**/*'], ['image', 'build']);
+// Default "gulp" task for server, watching, livereload -- basically everything listed above
+gulp.task('default', ['build', 'server'], () => {
   gulp.watch(['src/sass/**/*'], ['css', 'build']);
   gulp.watch(['src/js/src/**/*'], ['javascript', 'build']);
   gulp.watch(['src/*', 'templates/**/*', '!src/sass/**/*', '!src/js/src/**/*'], ['build']);

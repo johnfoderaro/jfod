@@ -1,6 +1,6 @@
 body {
   background-image:
-    linear-gradient(rgba(0, 0, 0, 0.45), rgba(0, 0, 0, 0.45)),
+    linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)),
     url('/img/background.jpg');
   background-color: $body-color;
   background-repeat: repeat-y;
@@ -19,11 +19,11 @@ body {
 }
 
 main {
-  padding-top: 4rem;
-  padding-bottom: 4rem;
+  padding-top: 1vh;
+  padding-bottom: 1vh;
   img {
     display: block;
-    max-width: 16rem;
+    max-width: 16vw;
     margin-right: auto;
     margin-left: auto;
     border-radius: 50%;
@@ -42,10 +42,10 @@ main {
 }
 
 nav {
-  padding-top: 2rem;
-  padding-bottom: 2rem;
+  padding-top: 1vh;
+  padding-bottom: 1vh;
   li {
-    font-size: 1.35em;
+    font-size: 1.25em;
     margin-right: .5rem;
     margin-left: .5rem;
     a {
