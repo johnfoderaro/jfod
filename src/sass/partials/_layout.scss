@@ -1,6 +1,6 @@
 body {
   background-image:
-    linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)),
+    linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)),
     url('/img/background.jpg');
   background-color: $body-color;
   background-repeat: repeat-y;
@@ -19,8 +19,8 @@ body {
 }
 
 main {
-  padding-top: 1vh;
-  padding-bottom: 1vh;
+  padding-top: 1vmax;
+  padding-bottom: 1vmax;
   img {
     display: block;
     max-width: 16vw;
