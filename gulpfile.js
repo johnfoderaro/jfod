@@ -11,9 +11,6 @@ const livereload = require('gulp-livereload');
 const shell = require('gulp-shell');
 const gutil = require('gulp-util');
 const babel = require('gulp-babel');
-const imagemin = require('gulp-imagemin');
-// const imageminMozjpeg = require('imagemin-mozjpeg');
-const pump = require('pump');
 
 // Express server
 const os = require('os');
@@ -55,17 +52,6 @@ gulp.task('javascript', () => {
   .pipe(maps.write('./'))
   .pipe(gulp.dest('./src/js'))
   .pipe(livereload());
-});
-
-// Image asset pipeline
-gulp.task('image', () => {
-  return gulp.src('./src/img/src/*')
-  .pipe(imagemin([
-    imageminMozjpeg({
-      quality: 60
-    })
-  ]).on('error', gutil.log))
-  .pipe(gulp.dest('./src/img'));
 });
 
 // Build Metalsmith
