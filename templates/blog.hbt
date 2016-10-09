@@ -1,0 +1,12 @@
+{{> head }}
+<body>
+  <div class="container blog">
+    {{> navigation }}
+    <main>
+      {{{contents}}}
+    </main>
+    {{> footer }}
+  </div>
+  {{> scripts }}
+</body>
+</html>

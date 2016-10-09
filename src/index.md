@@ -3,7 +3,7 @@ title: John Foderaro | JavaScript Developer
 template: home.hbt
 ---
 
-I specialize in server-side JavaScript and the Node.js platform.
+I specialize in Node.js and server-side JavaScript.
 
 - JavaScript
 - Node.js

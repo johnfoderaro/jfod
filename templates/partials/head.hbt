@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>{{ title }}</title>
+  <link rel="stylesheet" href="/css/main.min.css">
+  <script>
+  (function(){
+    var link;
+    var script = document.createElement('script');
+    var head   = document.getElementsByTagName('head')[0];
+    var url    = window.location.href;
+    function livereload() {
+      link = url.replace(/([:])\w+/, ':35729/livereload.js');
+      link = link.substring(0, link.indexOf('.js'));
+      return link + '.js';
+    }
+    script.setAttribute('src', livereload());
+    head.appendChild(script);
+  })();
+  </script>
+</head>

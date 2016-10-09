@@ -1,0 +1,43 @@
+
+.home {
+  main {
+    padding-top: 2rem;
+    padding-bottom: 2rem;
+    text-align: center;
+    h1 {
+    }
+    h2 {
+    }
+    p {
+      font-family: 'Open Sans', sans-serif;
+    }
+    li {
+      margin-right: .25rem;
+      margin-left: .25rem;
+      &:not(:last-child) {
+        &::after {
+          margin-left: 1rem;
+          font-size: 2rem;
+          content:"\00b7";
+        }
+      }
+    }
+    img {
+      display: block;
+      max-width: 14rem;
+      margin-right: auto;
+      margin-left: auto;
+      border-radius: 50%;
+      border: 2px solid #fff;
+    }
+  }
+  footer {
+    text-align: center;
+    p {
+
+    }
+    a {
+      font-family: 'Open Sans', sans-serif;
+    }
+  }
+}

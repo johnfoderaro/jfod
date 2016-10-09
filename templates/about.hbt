@@ -2,11 +2,8 @@
 <body>
   <div class="container">
     {{> navigation }}
-    <div class="home">
+    <div class="about">
       <main>
-        <h1>John Foderaro</h1>
-        <h2>JavaScript Developer</h2>
-        <img src="/img/john-foderaro.jpg"/>
         {{{contents}}}
       </main>
     </div>

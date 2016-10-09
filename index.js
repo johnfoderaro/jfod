@@ -5,7 +5,6 @@ const Handlebars = require('handlebars');
 const ignore = require('metalsmith-ignore');
 const markdown = require('metalsmith-markdown');
 const templates = require('metalsmith-templates');
-
 const fs = require ('fs');
 const gutil = require('gulp-util');
 
@@ -23,5 +22,8 @@ Metalsmith(__dirname)
   }
 });
 
-// Register Hanlebars partials
-// Handlebars.registerPartial('footer-nav', fs.readFileSync(__dirname + '/templates/partials/footer-nav.hbt').toString());
+// Register Hanlears partials
+const partials = ['aside', 'footer', 'head', 'navigation', 'scripts'];
+for (let i = 0; i < partials.length; i++) {
+  Handlebars.registerPartial(`${partials[i]}`, fs.readFileSync(`${__dirname}/templates/partials/${partials[i]}.hbt`).toString());
+}

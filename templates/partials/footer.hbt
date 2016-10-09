@@ -1,0 +1,12 @@
+<footer>
+  <nav>
+    <ul>
+      <li><a href="https://www.github.com/johnfoderaro">GitHub</a></li>
+      <li><a href="https://www.npmjs.com/~johnfoderaro">npm</a></li>
+      <li><a href="https://www.twitter.com/johnfoderaro">Twitter</a></li>
+      <li><a href="https://www.linkedin.com/in/jfoderaro">LinkedIn</a></li>
+      <li><a href="/contact">Contact</a></li>
+    </ul>
+    <p>Copyright John Foderaro © 2016<br/>Built with <span class="heart">&#9829;</span> in New Jersey</p>
+  </nav>
+</footer>

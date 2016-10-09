@@ -72,7 +72,9 @@ gulp.task('server', () => {
       }
     }
   }
-  server.use(express.static(__dirname + '/build/'));
+  server.use(express.static(__dirname + '/build/', {
+    extensions: ['html']
+  }));
   server.listen(port, () => {
     for (let i = 0; i < addresses.length; i++) {
       gutil.log(`Server listening at ${gutil.colors.white(`${addresses[i]}:${port}`)}`);
@@ -85,5 +87,5 @@ gulp.task('server', () => {
 gulp.task('default', ['build', 'server'], () => {
   gulp.watch(['src/sass/**/*'], ['css', 'build']);
   gulp.watch(['src/js/src/**/*'], ['javascript', 'build']);
-  gulp.watch(['src/*', 'templates/**/*', '!src/sass/**/*', '!src/js/src/**/*'], ['build']);
+  gulp.watch(['src/**/*', 'templates/**/*', '!src/sass/**/*', '!src/js/src/**/*'], ['build']);
 });
