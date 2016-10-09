@@ -3,15 +3,13 @@ body {
   // justify-content: center;
   // flex-direction: column;
   // align-items: center;
-  // // background-image:
-  // //   linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)),
-  // //   url('/img/background.jpg');
-  // background-color: $body-color;
-  // background-repeat: repeat-y;
-  // background-size: cover;
-  // @media(min-width: $large-breakpoint) {
-  //   background-position: left;
-  // }
+  // background-image: url('/img/code-background-white.jpg');
+  background-color: $body-color;
+  background-repeat: repeat-y;
+  background-size: cover;
+  @media(min-width: $large-breakpoint) {
+    background-position: left;
+  }
   color: $text-color;
   // height: 100vh;
   // font-family: 'Open Sans', sans-serif;
@@ -61,7 +59,7 @@ header {
       a {
         text-decoration: none;
         font-size: 1.5em;
-        color: $green;
+        color: $gray;
       }
 
       text-align: right;
@@ -87,7 +85,7 @@ footer {
 
   a {
     text-decoration: none;
-    color: $orange;
+    color: $blue;
     font-family: sans-serif;
   }
 
