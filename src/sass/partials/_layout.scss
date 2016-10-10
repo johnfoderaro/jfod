@@ -1,34 +1,22 @@
 body {
-  // display: flex;
-  // justify-content: center;
-  // flex-direction: column;
-  // align-items: center;
-  // background-image: url('/img/code-background-white.jpg');
   background-color: $body-color;
-  background-repeat: repeat-y;
-  background-size: cover;
-  @media(min-width: $large-breakpoint) {
-    background-position: left;
-  }
+  font-family: 'Open Sans', sans-serif;
   color: $text-color;
-  height: 100vh;
-  // font-family: 'Open Sans', sans-serif;
 }
-
 .container {
   @include content-wrapper;
 }
-
 header {
   nav {
-    height: 4rem;
+    padding-top: 1rem;
+    padding-bottom: 1rem;
     display: flex;
     flex-direction: row;
-    font-family: sans-serif;
     border-bottom: 1px solid #eee;
     .title {
       flex: 1 0 0;
       align-items: flex-start;
+      font-weight: 300;
       .name {
         font-weight: bold;
       }
@@ -37,38 +25,32 @@ header {
         font-size: 2.5em;
         color: $blue;
       }
-
     }
-
     .links {
       flex: 2 0 0;
       align-items: flex-end;
-
+      font-weight: 300;
       ul {
         margin: 0;
         padding: 0;
         list-style: none;
       }
-
       li {
         @media(min-width: $small-breakpoint) {
           display: inline;
         }
       }
-
       a {
         text-decoration: none;
         font-size: 1.5em;
         color: $gray;
       }
-
       text-align: right;
       line-height: 2.5;
       word-spacing: 1.5em;
     }
   }
 }
-
 footer {
   display: flex;
   flex-direction: column;
@@ -76,19 +58,15 @@ footer {
   flex-grow: 1;
   text-align: center;
   border-top: 1px solid #eee;
-
   p {
     padding-top: .5em;
     font-size: 1rem;
     font-weight: 300;
   }
-
   a {
     text-decoration: none;
     color: $blue;
-    font-family: sans-serif;
   }
-
   ul {
     margin: 0;
     padding-top: 1em;
@@ -97,7 +75,6 @@ footer {
     padding-left: 0;
     list-style: none;
   }
-
   li {
     font-size: 1.25em;
     @media(min-width: $small-breakpoint) {
@@ -106,13 +83,11 @@ footer {
     margin-right: 1rem;
     margin-left: 1rem;
   }
-
   @media(min-width: $small-breakpoint) {
     li {
       display: inline;
     }
   }
-
   .heart {
     color: $red;
   }
