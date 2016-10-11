@@ -20,7 +20,7 @@
       align-items: flex-start;
       h1 {
         margin: 0;
-        font-size: 6em;
+        font-size: 4em;
         font-weight: 600;
         @media(min-width: $large-breakpoint) {
           font-size: 4em;
@@ -55,26 +55,6 @@
       font-size: 1.5em;
       font-family: 'Lora', serif;
       line-height: 1.45;
-    }
-    ul {
-      margin: 0;
-      padding: 0;
-      list-style: none;
-    }
-    li {
-      @media(min-width: $small-breakpoint) {
-        display: inline;
-        font-weight: 300;
-      }
-      margin-right: .25rem;
-      margin-left: .25rem;
-      font-size: 1.75em;
-      &:not(:last-child) {
-        &::after {
-          margin-left: 1rem;
-          content:"\00b7";
-        }
-      }
     }
   }
 }

@@ -1,7 +1,11 @@
 ---
 title: John Foderaro | JavaScript Developer
-template: about.hbt
+template: post.hbt
+
+headline: Fundamental JavaScript Loops Demystified
+date: January 20, 2016
 ---
+
 
 New to JavaScript and just stumbled upon the world of loops? Then, check out this easy to understand tutorial on the fundamentals of loops.
 

@@ -6,6 +6,10 @@ body {
 .container {
   @include content-wrapper;
 }
+.flex-container {
+  display: flex;
+  flex-direction: row;
+}
 header {
   nav {
     padding-top: 1rem;
