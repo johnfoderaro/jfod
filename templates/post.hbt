@@ -1,12 +1,14 @@
 {{> head }}
 <body>
-  <div class="container post">
+  <div class="container">
     {{> navigation }}
-    <main>
-      <h1>{{ headline }}</h1>
-      <p class="date">{{ date }} | {{ wordcount }} minute read</p>
-      {{{ contents }}}
-    </main>
+    <div class="page">
+      <main>
+        <h1>{{ headline }}</h1>
+        <p class="date">{{ date }} | {{ wordcount }} minute read</p>
+        {{{ contents }}}
+      </main>
+    </div>
     {{> aside }}
     {{> footer }}
   </div>

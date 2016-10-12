@@ -2,7 +2,7 @@
 <body>
   <div class="container">
     {{> navigation }}
-    <div class="about">
+    <div class="page">
       <main>
         {{{contents}}}
       </main>

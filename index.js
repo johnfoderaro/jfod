@@ -4,6 +4,8 @@ const Metalsmith = require('metalsmith');
 const Handlebars = require('handlebars');
 const ignore = require('metalsmith-ignore');
 const markdown = require('metalsmith-markdown');
+const permalinks = require('metalsmith-permalinks');
+const collections = require('metalsmith-collections');
 const templates = require('metalsmith-templates');
 const fs = require ('fs');
 const gutil = require('gulp-util');
@@ -12,6 +14,18 @@ const gutil = require('gulp-util');
 Metalsmith(__dirname)
 .use(ignore(['img/src/**/*', 'sass/**/*', 'js/src/**/*', 'js/app.js']))
 .use(markdown({ gfm: true }))
+.use(permalinks({
+  linksets: [{
+    match: { collection: 'blog' },
+    pattern: ':blog/:title'
+  }]
+}))
+.use(collections({
+  articles: {
+	pattern: "src/blog/*.md",
+	sortyBy: "date",
+	reverse: true
+}}))
 .use(templates('handlebars'))
 .destination('./build')
 .build((error) => {

@@ -2,10 +2,6 @@
   main {
     padding-top: 2rem;
     padding-bottom: 2rem;
-    .flex-container {
-      display: flex;
-      flex-direction: row;
-    }
     a {
       color: $red;
       text-decoration: none;
@@ -22,7 +18,7 @@
         margin: 0;
         font-size: 4em;
         font-weight: 600;
-        @media(min-width: $large-breakpoint) {
+        @media(min-width: $large-width) {
           font-size: 4em;
         }
       }

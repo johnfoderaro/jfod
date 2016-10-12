@@ -1,14 +1,7 @@
 body {
-  background-color: $body-color;
+  background-color: $body;
   font-family: 'Open Sans', sans-serif;
-  color: $text-color;
-}
-.container {
-  @include content-wrapper;
-}
-.flex-container {
-  display: flex;
-  flex-direction: row;
+  color: $text;
 }
 header {
   nav {
@@ -40,7 +33,7 @@ header {
         list-style: none;
       }
       li {
-        @media(min-width: $small-breakpoint) {
+        @media(min-width: $small-width) {
           display: inline;
         }
       }
@@ -81,13 +74,13 @@ footer {
   }
   li {
     font-size: 1.25em;
-    @media(min-width: $small-breakpoint) {
+    @media(min-width: $small-width) {
       display: inline;
     }
     margin-right: 1rem;
     margin-left: 1rem;
   }
-  @media(min-width: $small-breakpoint) {
+  @media(min-width: $small-width) {
     li {
       display: inline;
     }
@@ -95,4 +88,11 @@ footer {
   .heart {
     color: $red;
   }
+}
+.container {
+  @include content-wrapper;
+}
+.flex-container {
+  display: flex;
+  flex-direction: row;
 }

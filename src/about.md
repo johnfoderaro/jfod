@@ -1,6 +1,6 @@
 ---
 title: About John Foderaro | JavaScript Developer
-template: about.hbt
+template: page.hbt
 ---
 
 # About

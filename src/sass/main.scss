@@ -1,8 +1,9 @@
 @import "../../node_modules/normalize-scss/sass/normalize/import-now";
-@import "partials/_variables";
+
+@import "partials/variables";
 @import "mixins/content-wrapper";
 
-@import "partials/_layout";
-@import "partials/_home";
-
-@import "partials/_post";
+@import "partials/layout";
+@import "partials/home";
+@import "partials/page";
+@import "partials/code";
