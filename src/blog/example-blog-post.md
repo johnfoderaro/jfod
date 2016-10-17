@@ -1,10 +1,10 @@
 ---
 title: Another Site Re Design
-collection: blog
-template: page.hbt
-
+description:
 headline: Another Site Re Design?
 date: January 20, 2016
+collection: blog
+layout: post.hbt
 ---
 
 If you’ve been to Digital Shore over the past few months, you may have ran into a post from late November, 2015, related to an overhaul of the site. There, I listed reasons why I decided to use the Poole framework (well, a modified version of the Poole framework that borrowed heavily from one of themes built off of Poole: Lanyon).

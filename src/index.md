@@ -1,6 +1,6 @@
 ---
 title: John Foderaro | JavaScript Developer
-template: home.hbt
+layout: home.hbt
 ---
 
 Hello, I'm a JavaScript developer from New Jersey, who specializes in sider-side JavaScript and the Node.js ecosystem.

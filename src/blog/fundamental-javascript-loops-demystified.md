@@ -1,10 +1,10 @@
 ---
 title: Fundamental JavaScript Loops Demystified
-collection: blog
-template: page.hbt
-
+description: Learn the fundamentals of Javascript For Loops, While Loops, and Do.. While Loops. Find out when to use each loop depending upon your scenario.
 headline: Fundamental JavaScript Loops Demystified
 date: January 20, 2016
+collection: blog
+layout: post.hbt
 ---
 
 New to JavaScript and just stumbled upon the world of loops? Then, check out this easy to understand tutorial on the fundamentals of loops.
@@ -23,7 +23,7 @@ However, if loops *and* JavaScript are new subjects for you, then continue readi
 A **for loop** is identified using the `for` keyword, followed by a set of parentheses which accepts three expressions separated by semicolons. The first expression typically initializes a counter variable, the second expression is the condition that is evaluated before each loop iteration, and the third expression is evaluated at the end of each loop, usually to increment the counter variable. Following these expressions is a code block (or set of curly braces) which contains a statement (or statements) that executes during the loop. Below is a simple example:
 
 **Log the numbers 1 through 10**
-```javascript
+{% highlight js %}
 for (var i = 1; i <= 10; i++) {
   console.log(i);
 }
@@ -37,7 +37,7 @@ for (var i = 1; i <= 10; i++) {
 // 8
 // 9
 // 10
-```
+{% endhighlight %}
 
 Here is a quick summary of what happened during the loop along with how the console was able to log the numbers 1 through 10:
 

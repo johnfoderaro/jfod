@@ -50,11 +50,16 @@
   .date {
     font-family: 'Open Sans', sans-serif;
     font-size: 1.25em;
-    color: lighten($black, 30%);
+    color: $orange;
   }
-  aside {
-    text-align: center;
+  .posts {
+    display: flex;
+    flex-direction: column;
   }
+}
+
+aside {
+  text-align: center;
   .cta {
     display: block;
     padding-top: .75rem;
@@ -86,12 +91,9 @@
       }
       background: $blue;
       svg {
+        // transition: all 0.5s;
         fill: #fff;
       }
     }
-  }
-  .posts {
-    display: flex;
-    flex-direction: column;
   }
 }
