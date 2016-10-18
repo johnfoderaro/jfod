@@ -45,9 +45,9 @@ function metalsmithBuild(callback) {
   .use(metalsmithDebug(false))
   .build((error) => {
     if (error) {
-      callback(error, null);
+      callback(error);
     } else {
-      callback(null, 'Metalsmith build successful!');
+      callback();
     }
   });
 }

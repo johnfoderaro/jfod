@@ -2,6 +2,7 @@
 
 const bs = require('browser-sync').create();
 const gulp = require('gulp');
+const copy = require('gulp-copy');
 const sass = require('gulp-sass');
 const maps = require('gulp-sourcemaps');
 const rename = require('gulp-rename');
@@ -10,6 +11,22 @@ const uglify = require('gulp-uglify');
 const gutil = require('gulp-util');
 const babel = require('gulp-babel');
 const metalsmithBuild = require('./metalsmith');
+
+// CSS pipeline
+gulp.task('css', () => {
+  return gulp.src('./src/sass/main.scss')
+  .pipe(maps.init())
+  .pipe(sass({
+    outputStyle: 'compressed',
+    includePaths: [
+      './src/sass/mixins/*',
+      './src/sass/partials/*',
+    ]
+  }).on('error', sass.logError))
+  .pipe(rename({suffix: '.min'}))
+  .pipe(maps.write('./'))
+  .pipe(gulp.dest('./src/css'));
+});
 
 // JavaScript pipeline
 gulp.task('javascript', () => {
@@ -30,28 +47,25 @@ gulp.task('javascript', () => {
   .pipe(gulp.dest('./src/js'));
 });
 
-// CSS pipeline
-gulp.task('css', () => {
-  return gulp.src('./src/sass/main.scss')
-  .pipe(maps.init())
-  .pipe(sass({
-    outputStyle: 'compressed',
-    includePaths: ['./src/sass/mixins/*', './src/sass/partials/*']
-  }).on('error', sass.logError))
-  .pipe(rename({suffix: '.min'}))
-  .pipe(maps.write('./'))
-  .pipe(gulp.dest('./src/css'));
-});
+// TODO Add image asset pipeline
+
+// Gulp depencencies copy
+// gulp.task('copy', () => {
+//   return gulp.src([
+//     './node_modules/jquery/dist/jquery.min.js',
+//     './node_modules/jquery-ui-dist/jquery-ui.min.js'
+//   ])
+//   .pipe(copy('./src/js/libraries', { prefix: 3 }));
+// });
 
 // Metalsmith build task
-gulp.task('build', ['javascript', 'css'], (done) => {
-  metalsmithBuild((error, success) => {
+gulp.task('build', (done) => {
+  metalsmithBuild((error) => {
     if (error) {
       gutil.log(error);
     } else {
-      gutil.log(success);
-      bs.reload();
       done();
+      bs.reload();
     }
   });
 });
@@ -61,11 +75,28 @@ gulp.task('server', (done) => {
   bs.init({
     server: { baseDir: './build' },
     notify: false
-  });
-  done();
+  }, () => done());
 });
 
-// Default task and watch
-gulp.task('default', ['build', 'server'], () => {
-  gulp.watch(['src/**/*', 'templates/**/*'], ['build']);
+// Default task and watch tasks
+gulp.task('default', ['server', 'build'], () => {
+  // Watch Sass
+  gulp.watch(['src/sass/**/*'], ['css']);
+  // Watch JavaScript
+  gulp.watch(['src/js/src/**/*'], ['javascript']);
+  // Watch for Handlebars and/or HTML, build site
+  gulp.watch([
+    'templates/**/*.html',
+    'templates/**/*.hbt',
+    'src/**/*.html',
+    'src/**/*.hbt',
+    'src/**/*.md',
+    'src/css/**/*.css',
+    'src/css/**/*.map',
+    'src/js/*.js',
+    'src/js/*.map',
+    'src/js/libraries/**/*.js',
+    'src/js/libraries/**/*.map',
+    'src/img/**/*'
+  ], ['build']);
 });
