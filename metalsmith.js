@@ -12,6 +12,7 @@ const util = require('util');
 
 // Handlebars Helpers
 const readTime = require('./lib/handlebars/read-time');
+const dateFormat = require('./lib/handlebars/date-format');
 
 // Metalsmith pipeline
 function metalsmithBuild(callback) {
@@ -54,6 +55,10 @@ function metalsmithBuild(callback) {
 
 Handlebars.registerHelper('readTime', (item) => {
   return new Handlebars.SafeString(readTime(item));
+});
+
+Handlebars.registerHelper('dateFormat', (date)=> {
+  return new Handlebars.SafeString(dateFormat(date));
 });
 
 function metalsmithDebug(log) {

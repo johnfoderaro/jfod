@@ -8,7 +8,7 @@
         <div class="posts">
         {{#each collections }}
         {{#each this }}
-          <h3><a href="/{{ this.path }}">{{ this.headline }}</a> on {{ this.date }}</h3>
+          <h3><a href="/{{ this.path }}">{{ this.headline }}</a><br>{{ dateFormat this.date }}</h3>
         {{/each}}
         {{/each}}
         </div>

@@ -2,7 +2,8 @@
 title: Set Up a Local Linux Environment with Vagrant
 description: Learn how to leverage Vagrant for all of your VirtualBox local development and engineering needs
 headline: Set Up a Local Linux Environment with Vagrant
-date: May 12, 2016
+#date: May 12, 2016
+date: 5/12/16
 collection: blog
 layout: post.hbt
 ---
