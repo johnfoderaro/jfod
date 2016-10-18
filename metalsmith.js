@@ -14,9 +14,14 @@ const util = require('util');
 const readTime = require('./lib/handlebars/read-time');
 
 // Metalsmith pipeline
-const metalsmithBuild = (gutil, bs) => {
+function metalsmithBuild(callback) {
   Metalsmith(__dirname)
-  .use(ignore(['img/src/**/*', 'sass/**/*', 'js/src/**/*', 'js/app.js']))
+  .use(ignore([
+    'img/src/**/*',
+    'sass/**/*',
+    'js/src/**/*',
+    'js/app.js'
+  ]))
   .use(markdown({ gfm: true }))
   .use(permalinks({
     linksets: [{
@@ -38,16 +43,14 @@ const metalsmithBuild = (gutil, bs) => {
   }))
   .destination('./build')
   .use(metalsmithDebug(false))
-  // .use(wordCounter())
   .build((error) => {
     if (error) {
-      gutil.log(error);
+      callback(error, null);
     } else {
-      gutil.log(`Metalsmith build successful!`);
-      bs.reload();
+      callback(null, 'Metalsmith build successful!');
     }
   });
-};
+}
 
 Handlebars.registerHelper('readTime', (item) => {
   return new Handlebars.SafeString(readTime(item));
