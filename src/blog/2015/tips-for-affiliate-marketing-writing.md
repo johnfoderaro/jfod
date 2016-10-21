@@ -2,8 +2,7 @@
 title: 5 Tips for Affiliate Marketing Writing
 description: So you want to get involved with affiliate marketing on the web? Check out these tips to help you write quality content.
 headline: 5 Tips for Affiliate Marketing Writing
-#date: June 21, 2015
-date: 6/21/15
+date: 2015/06/21
 collection: blog
 layout: post.hbt
 ---

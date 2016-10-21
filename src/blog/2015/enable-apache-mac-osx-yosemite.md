@@ -2,7 +2,7 @@
 title: Enable Apache in Mac OS X 10.10 Yosemite
 description: Looking to enable Apache 2.4 in Mac OS X Yosemite? Check out our comprehensive guide and set up your local dev environment.
 headline: Enable Apache in Mac OS X 10.10 Yosemite
-date: February 24, 2015
+date: 2015/02/24
 collection: blog
 layout: post.hbt
 ---

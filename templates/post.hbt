@@ -5,7 +5,7 @@
     <div class="page">
       <main>
         <h1>{{ headline }}</h1>
-        <p class="date">{{ date }} | {{ readTime }} minute read</p>
+        <p class="date">{{ longDate date }} | {{ readTime }} minute read</p>
         {{{ contents }}}
       </main>
     </div>

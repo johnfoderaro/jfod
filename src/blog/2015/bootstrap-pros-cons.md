@@ -2,7 +2,7 @@
 title: Five Bootstrap Pro's & Con's
 description: Read these 5 pro's and con's about Bootstrap and learn whether or not it's right for your website or web application
 headline: Five Bootstrap Pro's & Con's
-date: January 31, 2015
+date: 2015/01/31
 collection: blog
 layout: post.hbt
 ---

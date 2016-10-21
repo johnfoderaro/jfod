@@ -2,7 +2,7 @@
 title: Another Site Re Design?
 description: Yup. The site looks slightly different.
 headline: Another Site Re Design?
-date: March 23, 2016
+date: 2016/03/23
 collection: blog
 layout: post.hbt
 ---

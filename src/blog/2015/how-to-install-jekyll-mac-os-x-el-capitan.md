@@ -2,7 +2,7 @@
 title: Install Jekyll on OS X El Capitan 10.11
 description: Learn how to effortlessly install Jekyll on OS X 10.11 El Capitan. Jump start your next project with the Jekyll boilerplate and these useful Jekyll commands.
 headline: Install Jekyll on OS X El Capitan 10.11
-date: December 20, 2015
+date: 2015/12/20
 collection: blog
 layout: post.hbt
 ---

@@ -2,7 +2,7 @@
 title: Can Your CMS Meet Google's Updated Guidelines
 description: Blocking CSS and JS in robots.txt is a big no-no with Google's October 2014 Webmaster Update.
 headline: Can Your CMS Meet Google's Updated Guidelines?
-date: January 01, 2015
+date: 2015/01/01
 collection: blog
 layout: post.hbt
 ---

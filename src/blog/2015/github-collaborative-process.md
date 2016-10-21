@@ -2,7 +2,7 @@
 title: GitHub Collaborative Process Overview
 description: Everyone is new to Git and GitHub and has to learn somewhere. Check out this guide on GitHub collaboration. Fork it!
 headline: GitHub Collaborative Process Overview
-date: November 1, 2015
+date: 2015/11/01
 collection: blog
 layout: post.hbt
 ---

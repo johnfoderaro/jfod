@@ -1,8 +1,8 @@
 ---
 title: How to Become an SEO Professional
 description: Want to learn how to become an SEO professional? Check out our outlines of the best traits and skills needed for the job.
-headline:How to Become an SEO Professional
-date: March 31, 2015
+headline: How to Become an SEO Professional
+date: 2015/03/31
 collection: blog
 layout: post.hbt
 ---

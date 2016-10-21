@@ -2,14 +2,14 @@
 title: How to Install Jekyll on Mac OS X 10.10 Yosemite
 description: Want to learn how to install Jekyll on Mac OS X 10.10 Yosemite? Check out our easy to follow guide!
 headline: How to Install Jekyll on Mac OS X 10.10 Yosemite
-date: March 22, 2016
+date: 2015/03/22
 collection: blog
 layout: post.hbt
 ---
 
 After much frustration dealing with Joomla! and Wordpress over the past several years, battling constant plugin issues, security risks, and the overall bloat of a Content Management System, I decided to switch how I develop websites. Eventually I stumbled upon Jekyll and my web development world has never been the same since.
 
-## What is Jekll?
+## What is Jekyll?
 
 Jekyll is a static site generator that essentially takes plain text files and transforms them into a functional website. Markdown is used for the typical content pages, and Liquid for template pages. According to the Jekyll Documentation:
 
@@ -45,9 +45,9 @@ This guide is based upon using Mac OS X 10.10 Yosemite. If you’re on Mavericks
 
 Xcode is needed for some of the dependencies that Jekyll relies on. It’s best to install this first so there aren’t any issues when attempting to install the Jekyll Ruby Gem. To get Xcode, simple make your way to the Mac App Store. Once it’s installed, open Xcode to agree to the terms and conditions. Once that's done, there is one additional item needed, the Xcode Command-Line Tools. You can download this additional Xcode component through Preferences -> Downloads -> Components. Or you can get it through Terminal (more on Terminal below) with the following command:
 
-{% highlight terminal %}
-$ xcode-select —install
-{% endhighlight %}
+```bash
+xcode-select —install
+```
 
 ### Ruby
 
@@ -57,9 +57,9 @@ If you’re using Ruby for other projects, then using RVM and updating to the la
 
 Yosemite ships with Ruby 2.0.0 and RubyGems version 2.0.14. Gems are installed to:
 
-{% highlight terminal %}
+```bash
 /Library/Ruby/Gems/2.0.0/cache/
-{% endhighlight %}
+```
 
 With Ruby already included with Yosemite, there isn’t really anything necessary to configure for this guide.
 
@@ -67,7 +67,7 @@ With Ruby already included with Yosemite, there isn’t really anything necessar
 
 To install and use Jekyll, you’ll need to be comfortable with using Terminal on your Mac. The good news is that it’s already installed on your Mac!
 
-Terminal is a program that offers a command line interface with a Unix shell. In the case of Mac OS X, the Unix shell used with Terminal is [bash](http://en.wikipedia.org/wiki/Bash_(Unix_shell)){:target=“_blank”}.
+Terminal is a program that offers a command line interface with a Unix shell. In the case of Mac OS X, the Unix shell used with Terminal is [bash](http://en.wikipedia.org/wiki/Bash_(Unix_shell)).
 
 Please be advised that any misuse of the `sudo` command can result in ***serious*** problems if you do not know what you are doing. User discretion is advised!
 
@@ -77,9 +77,9 @@ Ok, now that the doom and gloom part of using Terminal is out of the way, you’
 
 To install Jekyll, open up your Terminal and enter the following command:
 
-{% highlight terminal %}
+```bash
 sudo gem install jekyll
-{% endhighlight %}
+```
 
 You'll see that several other Gems install to complete the Jekyll installation. Once done, you're all set -- just one command needed to install Jekyll on Mac OS X 10.10 Yosemite. Pretty easy, right?
 

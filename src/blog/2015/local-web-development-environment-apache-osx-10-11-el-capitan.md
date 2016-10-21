@@ -2,7 +2,7 @@
 title: How to Set up Apache in OS X 10.11 El Capitan
 description: How to set up a local web development environment in OS X 10.11 El Capitan with Apache, Apache Virtual Hosts, PHP, and custom host names per project.
 headline: How to Set up Apache in OS X 10.11 El Capitan
-date: August 01, 2015
+date: 2015/08/01
 collection: blog
 layout: post.hbt
 ---

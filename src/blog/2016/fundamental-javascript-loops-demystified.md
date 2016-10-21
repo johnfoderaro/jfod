@@ -2,7 +2,7 @@
 title: Fundamental JavaScript Loops Demystified
 description: Learn the fundamentals of Javascript For Loops, While Loops, and Do.. While Loops. Find out when to use each loop depending upon your scenario.
 headline: Fundamental JavaScript Loops Demystified
-date: January 20, 2016
+date: 2016/01/20
 collection: blog
 layout: post.hbt
 ---
@@ -23,7 +23,7 @@ However, if loops *and* JavaScript are new subjects for you, then continue readi
 A **for loop** is identified using the `for` keyword, followed by a set of parentheses which accepts three expressions separated by semicolons. The first expression typically initializes a counter variable, the second expression is the condition that is evaluated before each loop iteration, and the third expression is evaluated at the end of each loop, usually to increment the counter variable. Following these expressions is a code block (or set of curly braces) which contains a statement (or statements) that executes during the loop. Below is a simple example:
 
 **Log the numbers 1 through 10**
-{% highlight js %}
+```javascript
 for (var i = 1; i <= 10; i++) {
   console.log(i);
 }
@@ -37,7 +37,7 @@ for (var i = 1; i <= 10; i++) {
 // 8
 // 9
 // 10
-{% endhighlight %}
+```
 
 Here is a quick summary of what happened during the loop along with how the console was able to log the numbers 1 through 10:
 
@@ -51,7 +51,8 @@ Here is a quick summary of what happened during the loop along with how the cons
 Much like above, a **while loop** is identified using the `while` keyword, followed by parentheses containing an expression that is evaluated. After the parentheses, there is a code block that contains a statement (or statements) that executes *while* the condition evaluates to true. Once the condition is false, the loop stops. Below is a simple example:
 
 **Log the numbers 1 through 10**
-{% highlight js %}
+
+```javascript
 var i = 0;
 while (i < 10) {
   i++;
@@ -67,7 +68,7 @@ while (i < 10) {
 // 8
 // 9
 // 10
-{% endhighlight %}
+```
 
 Here is a quick summary of what happened during the loop and how the console was able to log the numbers 1 through 10:
 
@@ -81,7 +82,8 @@ Here is a quick summary of what happened during the loop and how the console was
 The **do... while loop** begins with the `do` keyword, followed by a code block containing the statement (or statements) to execute, and then ends with the keyword `while` followed by the condition within parentheses. This loop differs from the one above in that it executes the code within the loop at least one time before it evaluates the condition to true or false. As with the other loops discussed above, this loop will continue until the condition is false. Below is a simple example:
 
 **Log the numbers 1 through 10**
-{% highlight js %}
+
+```javascript
 var i = 0;
 do {
   i++;
@@ -97,7 +99,8 @@ do {
 // 8
 // 9
 // 10
-{% endhighlight %}
+```
+
 Here is a quick summary of what happened during the loop and how the console was able to log the numbers 1 through 10:
 
 - `var i` is initialized, holding the value of `0`
@@ -127,7 +130,7 @@ A common lesson in programming is the FizzBuzz test. The question generally asks
 
 The script below only loops through 1 to 20, but the logic is the same -- also, it's been written for readability and clarity, not brevity:
 
-{% highlight js %}
+```javascript
 for (var i = 1; i <= 20; i++) {
   if (i % 3 == 0 && i % 5 == 0) {
     console.log("FizzBuzz");
@@ -159,7 +162,7 @@ for (var i = 1; i <= 20; i++) {
 // Fizz
 // 19
 // Buzz
-{% endhighlight %}
+```
 
 ### When Looping, Order Matters in Conditional Statements
 

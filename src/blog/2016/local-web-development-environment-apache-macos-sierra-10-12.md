@@ -2,7 +2,7 @@
 title: How to Set up Apache in macOS Sierra 10.12
 description: How to set up a local web development environment in macOS Sierra 10.12 with Apache, Virtual Hosts, PHP, and custom hostnames per project.
 headline: How to Set up Apache in macOS Sierra 10.12
-date: August 08, 2016
+date: 2016/08/08
 collection: blog
 layout: post.hbt
 ---
@@ -51,15 +51,13 @@ To get started with Terminal, you can find the app located at:
 
 Go ahead and open it. You should have a window with content that looks similar to this -- your computer name followed by a colon, a tilde, and your Mac user name ending with a dollar sign:
 
-{% highlight shell %}
+``` shell
 Johns-Air:~ John$
-{% endhighlight %}
+```
 
-- Commands will be entered after `$`. This guide will include `$` indicating a single line or single command. Please note that `$` should not be entered with every command. It's just there to serve as a guide.
-
-- This guide will highlight some of the more common commands you'll encounter while using Terminal and will not just gloss over these commands like most other guides. Instead, there will be some additional clarification and explanation as to what each command means and why.
-
-- Also, this guide will use absolute paths where necessary, as it can sometimes be a bit difficult for newcomers to find their way around the file system in Terminal.
+- Commands will be entered after `$`. This guide will include `$` indicating a single line or single command. Please note that `$` should not be entered with every command. It's just there to serve as a guide.  
+- This guide will highlight some of the more common commands you'll encounter while using Terminal and will not just gloss over these commands like most other guides. Instead, there will be some additional clarification and explanation as to what each command means and why.  
+- Also, this guide will use absolute paths where necessary, as it can sometimes be a bit difficult for newcomers to find their way around the file system in Terminal.  
 
 ## 2. Creating Sites and Project Directories
 
@@ -73,15 +71,15 @@ First, we're going to create a `Sites` directory within your Mac's home director
 
 Enter the following command into Terminal to create your `Sites` directory:
 
-{% highlight shell %}
+``` shell
 $ mkdir ~/Sites
-{% endhighlight %}
+```
 
 If you're new to Terminal, you're probably wondering whether or not the above command actually *did* something. And since most items in Terminal never really give any feedback, a handy command to **list** the contents of your current directory is `ls`. To list the contents of your Home directory, enter the following:
 
-{% highlight shell %}
+``` shell
 $ ls ~
-{% endhighlight %}
+```
 
 `Sites` will now be listed as one of the items within your Home directory.
 
@@ -91,21 +89,21 @@ Next, we'll be creating two additional directories within `Sites`. These two dir
 
 To begin, let's use the `mkdir` command again. The command below will create a directory named `foo` within `Sites`:
 
-{% highlight shell %}
+``` shell
 $ mkdir ~/Sites/foo
-{% endhighlight %}
+```
 
 Go ahead and repeat this action again, this time, to create a `bar` directory:
 
-{% highlight shell %}
+``` shell
 $ mkdir ~/Sites/bar
-{% endhighlight %}
+```
 
 To ensure these directories exist, you can check again using:
 
-{% highlight shell %}
+``` shell
 $ ls ~/Sites
-{% endhighlight %}
+```
 
 Both `foo` and `bar` will be printed to Terminal.
 
@@ -113,9 +111,9 @@ Both `foo` and `bar` will be printed to Terminal.
 
 Now that the two test directories are present, we need some files for Apache to serve. Let's keep things basic and straightforward with a simple HTML file for now. To create this new file, use the `touch` command. This command allows you to create a new empty file or even change a timestamp on a file or directory:
 
-{% highlight shell %}
+``` shell
 $ touch ~/Sites/foo/index.html
-{% endhighlight %}
+```
 
 After executing the above command, an empty `index.html` file will added to `~/Sites/foo`.
 
@@ -123,15 +121,15 @@ After executing the above command, an empty `index.html` file will added to `~/S
 
 However, an empty `index.html` file doesn't really help us much! Let's add some HTML to this file, using the **nano** text editor, which is a text editor designed for Unix-like command line interfaces -- such as Terminal:
 
-{% highlight shell %}
+``` shell
 $ nano ~/Sites/foo/index.html
-{% endhighlight %}
+```
 
 After running the above command, you'll notice that the Terminal window now looks more like a text editor -- with the file name at the top, a cursor indicating where text can be entered, and several commands listed at the bottom (note: amongst the commands at the bottom of nano, `^` represents the control key).
 
 Add the following to `~/Sites/foo/index.html`:
 
-{% highlight html %}
+``` html
 <!DOCTYPE html>
 <html>
   <head>
@@ -142,7 +140,7 @@ Add the following to `~/Sites/foo/index.html`:
     <p>Welcome to <strong>Foo</strong>.</p>
   </body>
 </html>
-{% endhighlight %}
+```
 
 Close and save this file, using **control + X**, followed by **Y**, then **Enter**. These commands tell nano to exit the file and to save to the current file name (or, conversely you can press **N** when you want to close but *do not* want to save).
 
@@ -150,19 +148,19 @@ Close and save this file, using **control + X**, followed by **Y**, then **Enter
 
 Awesome, we have an `index.html` file in `~/Sites/foo`, but what about `~/Sites/bar`? Instead of manipulating files via Finder, below is a great example of where Terminal can afford you some greater flexibility. Without needing to click through several folders and windows to copy `~/Sites/foo/index.html`, you can use the `cp` command to **copy** the file and just swap out instances of the word "foo" for "bar" using nano:
 
-{% highlight shell %}
+``` shell
 $ cp ~/Sites/foo/index.html ~/Sites/bar/index.html
-{% endhighlight %}
+```
 
 Next, go ahead and open the file with nano:
 
-{% highlight shell %}
+``` shell
 $ nano ~/Sites/bar/index.html
-{% endhighlight %}
+```
 
 Your end result should in `~/Sites/bar/index.html` look like this:
 
-{% highlight html %}
+``` html
 <!DOCTYPE html>
 <html>
   <head>
@@ -173,7 +171,7 @@ Your end result should in `~/Sites/bar/index.html` look like this:
     <p>Welcome to <strong>Bar</strong>.</p>
   </body>
 </html>
-{% endhighlight %}
+```
 
 With two test directories in place, it's time to shift gears and begin configuring Apache for macOS Sierra.
 
@@ -189,43 +187,43 @@ Our first task is to create a new configuration file that helps tell Apache wher
 
 If you're not certain what your exact username is (case sensitivity and all), then you'll want to run the following command to print your username to the Terminal window:
 
-{% highlight shell %}
+``` shell
 $ whoami
-{% endhighlight %}
+```
 
 Now that you know your username, navigate to the directory where we need to place this new file. To do this, we'll need to **change directories** with the `cd` command. This allows us to navigate into and out of our current working directory to wherever we need to go. For our purposes, we simply need to enter the following command to take use to the `/etc/apache2/users` directory:
 
-{% highlight shell %}
+``` shell
 $ cd /etc/apache2/users
-{% endhighlight %}
+```
 
 Next, lets create the `username.conf` file (using your Mac username, not the word "username"). This time, we won't really bother using `touch` as we had done throughout step 2. There is actually a little shortcut we can use instead, where we simply specify the new file's name while using nano. If the file exists, nano will open the existing file, otherwise, nano will open a blank text editor and it will allow us to save this file in our current working directory as the specified file name.
 
 Also, for this step we'll be using the `sudo` command for the first time in this guide. As pointed out above in step 1, `sudo` is a special command that if used incorrectly or haphazardly, can damage and destroy system files. Please proceed with caution!
 
-{% highlight shell %}
+``` shell
 $ sudo nano username.conf
-{% endhighlight %}
+```
 
 **Be sure to replace "username" with your actual username!**
 
 With this new file open in nano, go ahead and add the following contents, being sure to replace "username" with your actual username on your Mac:
 
- {% highlight apache %}
+ ``` apache
  <Directory "/Users/username/Sites/">
    AllowOverride All
    Options Indexes MultiViews FollowSymLinks
    Require all granted
 </Directory>
-{% endhighlight %}
+```
 
 Once the above is set, close nano with **control + X**, followed by **Y**, then **Enter**.
 
 Next, let's adjust the permissions a bit so that Apache can read this new file. Enter the following into Terminal, once more replacing "username" with your actual username:
 
-{% highlight shell %}
+``` shell
 $ sudo chmod 644 username.conf
-{% endhighlight %}
+```
 
 Without going into too much detail on Linux file permissions, the three numbers places for **644**, listed above, represent the following:
 
@@ -239,31 +237,31 @@ Now that the user configuration file has been created and it has the proper perm
 
 Our next step is to move "back" or "up" one level, to `/etc/apache2`. You should currently be in `/etc/apache2/users` from the previous step. To change directories one level, you simply need to use this common shorthand coupled with the `cd` command: two periods instead of an actual directory name:
 
-{% highlight shell %}
+``` shell
 $ cd ..
-{% endhighlight %}
+```
 
 This may look familiar to some developers who have seen this used in paths for CSS or JavaScript files. These two dots are shorthand for your current directory's parent directory. But what if you want to double check the exact file path of where you're at currently? There's a command for that too, `pwd`, which will **print the working directory** for you, listing exactly where you're located:
 
-{% highlight shell %}
+``` shell
 $ pwd
-{% endhighlight %}
+```
 
 When I run that command, I get: `/etc/apache2`.
 
 Within `/etc/apache2`, let's first make a backup of the existing `httpd.conf` file. To begin, use the `cp` command to **copy** and then add `.bak` as the file extension of the copied version:
 
-{% highlight shell %}
+``` shell
 $ cp httpd.conf httpd.conf.bak
-{% endhighlight %}
+```
 
 I find it useful to keep a copy of these default configuration files handy incase there's a need to ever revert back to the original, or at the very least, reference the original.
 
 With the backup now stashed, we can focus our efforts on editing `httpd.conf`. Open that file with nano:
 
-{% highlight shell %}
+``` shell
 $ sudo nano httpd.conf
-{% endhighlight %}
+```
 
 In this file, we'll need to "turn on" several modules. To do this, it's a matter of removing the **#** symbol, which acts as a way of commenting the entire line out, effectively "turning it off".
 
@@ -271,7 +269,7 @@ Nano offers a search capability that makes for finding each line a little easier
 
 Listed below are the modules to uncomment/enable:
 
-{% highlight apache %}
+``` apache
 LoadModule authz_host_module libexec/apache2/mod_authz_host.so
 LoadModule authz_core_module libexec/apache2/mod_authz_core.so
 LoadModule userdir_module libexec/apache2/mod_userdir.so
@@ -279,7 +277,7 @@ LoadModule vhost_alias_module libexec/apache2/mod_vhost_alias.so
 
 Include /private/etc/apache2/extra/httpd-userdir.conf
 Include /private/etc/apache2/extra/httpd-vhosts.conf
-{% endhighlight %}
+```
 
 Once you have searched for each line above and removed the prepending **#**, save and close `httpd.conf`.
 
@@ -287,27 +285,27 @@ Once you have searched for each line above and removed the prepending **#**, sav
 
 With the `httpd.conf` file updated, the next file to edit is `httpd-userdir.conf` located in the `extra` directory:
 
-{% highlight shell %}
+``` shell
 $ cd /etc/apache2/extra
-{% endhighlight %}
+```
 
 Just like before, it's good practice to keep a spare copy of the default configuration file around -- just to be safe:
 
-{% highlight shell %}
+``` shell
 $ sudo cp httpd-userdir.conf httpd-userdir.conf.bak
-{% endhighlight %}
+```
 
 With the backup all set, open and edit `httpd-userdir.conf`:
 
-{% highlight shell %}
+``` shell
 $ sudo nano httpd-userdir.conf
-{% endhighlight %}
+```
 
 Uncomment the following line, removing **#**:
 
-{% highlight apache %}
+``` apache
 Include /private/etc/apache2/users/*.conf
-{% endhighlight %}
+```
 
 **Note: if you're curious about the PHP Module it will be explored in the "optional steps" listed below:**
 
@@ -315,9 +313,9 @@ Include /private/etc/apache2/users/*.conf
 
 With all of our settings and changes in place, it's time to restart Apache and test out our setup:
 
-{% highlight shell %}
+``` shell
 sudo apachectl restart
-{% endhighlight %}
+```
 
 ## Viewing Your Local Sites
 
@@ -339,13 +337,13 @@ Using Virtual Hosts allows you to tell Apache exactly where to look for the spec
 
 First, create a backup of the default `httpd-vhosts.conf` file. This file is located at `/etc/apache2/extra`:
 
-{% highlight shell %}
+``` shell
 $ sudo cp httpd-vhosts.conf httpd-vhosts.conf.bak
-{% endhighlight %}
+```
 
 Once a backup is handy, clear out the contents of `httpd-vhosts.conf` and add a simple set of `<VirtualHost>` instructions for each of our dev websites, **Foo.dev** and **Bar.dev**, as demonstrated below:
 
-{% highlight apache %}
+``` apache
 #Virtual Host Entry for foo.dev
 <VirtualHost *:80>
     DocumentRoot "/Users/john/Sites/foo"
@@ -361,21 +359,21 @@ Once a backup is handy, clear out the contents of `httpd-vhosts.conf` and add a 
     ErrorLog "/private/var/log/apache2/bar-error_log"
     CustomLog "/private/var/log/apache2/bar-access_log" common
 </VirtualHost>
-{% endhighlight %}
+```
 
 ### 1.2 Editing Your Host File
 
 After saving and closing the `httpd-vhost.conf` file, we'll need to edit the host file to create hostnames for **Foo** and **Bar**:
 
-{% highlight shell %}
+``` shell
 $ sudo nano /etc/hosts
-{% endhighlight %}
+```
 
 **Note: be careful when dealing with this file. Add your changes to the bottom and do not change the first 3 lines!**
 
 Your host file should appear similar to this when you first open it:
 
-{% highlight shell %}
+``` shell
 ##
 # Host Database
 #
@@ -385,11 +383,11 @@ Your host file should appear similar to this when you first open it:
 127.0.0.1       localhost
 255.255.255.255 broadcasthost
 ::1             localhost
-{% endhighlight %}
+```
 
 To keep things documented, add a comment identifying your changes to this file, just above the hostname entries for **foo.dev** and **bar.dev**:
 
-{% highlight shell %}
+``` shell
 ##
 # Host Database
 #
@@ -403,7 +401,7 @@ To keep things documented, add a comment identifying your changes to this file, 
 #Local dev sites
 127.0.0.1       foo.dev
 127.0.0.1       bar.dev
-{% endhighlight %}
+```
 
 Once added, save and close this file.
 
@@ -411,9 +409,9 @@ Once added, save and close this file.
 
 Before we can test out **foo.dev** and **bar.dev**, Apache needs to be restarted so that the Virtual Host directives can take effect:
 
-{% highlight shell %}
+``` shell
 sudo apachectl restart
-{% endhighlight %}
+```
 
 Now go ahead and test both **foo.dev** and **bar.dev** in your web browser. Both sites should load and display their relevant `index.html` files!
 
@@ -429,15 +427,15 @@ Another nice feature that compliments the built-in Apache web server in macOS Si
 
 First, let's revisit `httpd.conf`:
 
-{% highlight shell %}
+``` shell
 $ sudo nano /etc/apache2/httpd.conf
-{% endhighlight %}
+```
 
 In this file, we simply need to uncomment one line, by removing **#**:
 
-{% highlight apache %}
+``` apache
 LoadModule php5_module libexec/apache2/libphp5.so
-{% endhighlight %}
+```
 
 With this module enabled (once Apache is restarted), you can now serve any files with the `.php` extension. Apache can now basically hand that file over to the PHP interpreter and then receive the end result to send back as an HTTP response.
 
@@ -445,21 +443,21 @@ With this module enabled (once Apache is restarted), you can now serve any files
 
 What if we want to execute PHP code that exists within our HTML files? To do that, we need to make a change to the `httpd-vhosts.conf` file:
 
-{% highlight shell %}
+``` shell
 $ sudo nano /etc/apache2/extra/httpd-vhosts.conf
-{% endhighlight %}
+```
 
 Add this block of code to the very top of the file:
 
-{% highlight apache %}
+``` apache
 <FilesMatch ".+\.html$">
    SetHandler application/x-httpd-php
 </FilesMatch>
-{% endhighlight %}
+```
 
 Your `httpd-vhosts.conf` file should now look like this:
 
-{% highlight apache %}
+``` apache
 #Enable PHP interpretation within HTML files
 <FilesMatch ".+\.html$">
    SetHandler application/x-httpd-php
@@ -480,42 +478,42 @@ Your `httpd-vhosts.conf` file should now look like this:
     ErrorLog "/private/var/log/apache2/bar-error_log"
     CustomLog "/private/var/log/apache2/bar-access_log" common
 </VirtualHost>
-{% endhighlight %}
+```
 
 After making these changes, restart Apache:
 
-{% highlight shell %}
+``` shell
 sudo apachectl restart
-{% endhighlight %}
+```
 
 ### 3.3 Test PHP Files
 
 Let's test out an actual `.php` file and also some PHP code within in an HTML file. **Foo.dev** looks like a perfect test candidate:
 
-{% highlight shell %}
+``` shell
 $ nano ~/Sites/foo/example.php
-{% endhighlight %}
+```
 
 In nano, enter the following basic PHP variable and statement:
 
-{% highlight php %}
+``` php
 <?php
   $greeting = 'Hello, PHP World!';
   echo '<h1>' . $greeting . '</h1>';
 ?>
-{% endhighlight %}
+```
 
 Save and close the file. Next, visit **foo.dev/example.php**. You'll be greeted by "Hello, PHP World!" as an H1 tag.
 
 Next, let's test out interpreting PHP code that exists within an HTML file:
 
-{% highlight shell %}
+``` shell
 $ nano ~/Sites/foo/index.html
-{% endhighlight %}
+```
 
 Add a few lines of PHP code that can help set a "day" variable so we can tell visitors what the current day of the week is:
 
-{% highlight php %}
+``` html
 <?php
   date_default_timezone_set('UTC');
   $day = date('l');
@@ -531,7 +529,7 @@ Add a few lines of PHP code that can help set a "day" variable so we can tell vi
     <p>Today is <?php echo $day; ?>.</p>
   </body>
 </html>
-{% endhighlight %}
+```
 
 Now, when you visit **Foo.dev**, you'll be informed with what the current day of the week is, based upon the UTC timezone!
 

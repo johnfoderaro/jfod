@@ -2,7 +2,7 @@
 title: The New Digital Shore
 description: Ending the year with a bang! Check out the new layout and what's in store for the tail end of 2015 and into early 2016.
 headline: The New Digital Shore
-date: November 30, 2015
+date: 2015/11/30
 collection: blog
 layout: post.hbt
 ---

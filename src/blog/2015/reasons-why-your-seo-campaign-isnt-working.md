@@ -2,7 +2,7 @@
 title: 7 Reasons Your SEO Campaign Isn't Working
 description: Are you wondering why your SEO campaign isn't working? Check out these common issues to avoid and get your campaign back on track.
 headline: 7 Reasons Your SEO Campaign Isn't Working
-date: February 03, 2015
+date: 2015/03/03
 collection: blog
 layout: post.hbt
 ---

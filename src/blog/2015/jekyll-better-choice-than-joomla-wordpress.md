@@ -2,7 +2,7 @@
 title: Is Jekyll Better Than Joomla! and WordPress?
 description: Ditch your CMS and embrace modern front-end web development technologies by using Jekyll, Grunt, Bower and more.
 headline: Is Jekyll Better Than Joomla! and WordPress?
-date: June 14, 2016
+date: 2015/06/14
 collection: blog
 layout: post.hbt
 ---

@@ -2,8 +2,7 @@
 title: Set Up a Local Linux Environment with Vagrant
 description: Learn how to leverage Vagrant for all of your VirtualBox local development and engineering needs
 headline: Set Up a Local Linux Environment with Vagrant
-#date: May 12, 2016
-date: 5/12/16
+date: 2016/05/12
 collection: blog
 layout: post.hbt
 ---
@@ -101,10 +100,10 @@ For example, I've created a directory with the same name used in the `VM_NAME` c
 
 Basically, I executed the following commands in Terminal:
 
-{% highlight shell %}
+```shell
 cd ~/ && mkdir digitalshore-vm
 cd digitalshore-vm && touch Vagrantfile
-{% endhighlight %}
+```
 
 The first command changes to my Home directory and then creates the "digitalshore-vm" directory within Home. The second command changes to the newly created directory and then creates the `Vagrantfile` within that new directory.
 
@@ -128,7 +127,7 @@ This `Vagrantfile` will handle the following items for you:
 
 **Sample:**
 
-{% highlight ruby %}
+``` ruby
 # encoding: utf-8
 # -*- mode: ruby -*-
 # vi: set ft=ruby :
@@ -195,7 +194,7 @@ Vagrant.configure(2) do |config|
   SHELL
 
 end
-{% endhighlight %}
+```
 
 Now that you have reviewed this sample `Vagrantfile`, there are two paths you can choose to continue:
 
@@ -207,11 +206,11 @@ Make any appropriate edits that you may need (such as editing file paths, user n
 
 If you dislike the above sample and want to opt for the default `Vagrantfile` provided by Vagrant, you can simply remove the file we had created in step 3 and create a new file that contains the bare minimum to provision a virtual machine with Vagrant:
 
-{% highlight shell %}
+``` shell
 cd ~/digitalshore-vm
 rm -r Vagrantfile
 vagrant init
-{% endhighlight %}
+```
 
 ### 5. `vagrant up` and Provisioning your Virtual Machine
 
@@ -219,16 +218,16 @@ With your `Vagrantfile` in place, it's time to provision your virtual machine!
 
 Open Terminal and enter the following commands:
 
-{% highlight shell %}
+``` shell
 cd ~/digitalshore-vm
 vagrant up
-{% endhighlight %}
+```
 
 During this process Vagrant will download `ubuntu/trusty64` directly from [Hashicorp's Atlas](https://atlas.hashicorp.com/hashicorp/boxes/precise64) and then provision the virtual machine as specified in your `Vagrantfile`. Depending upon your Internet connection and computer speed, the entire process should take around 3 to 5 minutes to complete. Once the virtual machine is provisioned, you can log into your virtual machine with the following command:
 
-{% highlight shell %}
+``` shell
 vagrant ssh
-{% endhighlight %}
+```
 
 This command will take care of connecting you directly to your VM via SSH. It handles the username and password -- which, by default, are both vagrant/vagrant.
 
@@ -239,24 +238,24 @@ This command will take care of connecting you directly to your VM via SSH. It ha
 Sometimes we need to turn on, turn off, pause, or destroy our Vagrant managed virtual machines, especially after rebooting or testing out new features, etc.
 
 **To turn your VM on, navigate to the directory with your `Vagrantfile`:**
-{% highlight shell %}
+``` shell
 vagrant up
-{% endhighlight %}
+```
 
 **To pause your VM, navigate to the directory with your `Vagrantfile`:**
-{% highlight shell %}
+``` shell
 vagrant suspend
-{% endhighlight %}
+```
 
 **To turn your VM off, navigate to the directory with your `Vagrantfile`:**
-{% highlight shell %}
+``` shell
 vagrant halt
-{% endhighlight %}
+```
 
 **To destroy your VM, navigate to the directory with your `Vagrantfile`:**
-{% highlight shell %}
+``` shell
 vagrant destroy
-{% endhighlight %}
+```
 
 These are just a few of the immediate basic commands you'll want to learn while using Vagrant. For a much more in-depth manual, check out the [docs from Vagrant](https://www.vagrantup.com/docs/cli/).
 

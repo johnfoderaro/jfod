@@ -2,7 +2,7 @@
 title: 5 SEO Tips for Going Mobile-Friendly
 description: Google's mobile-friendly ranking algorithm drops April 21, 2015. Is your site ready? Check out these 5 SEO tips for becoming mobile compliant.
 headline: 5 SEO Tips for Going Mobile-Friendly
-date: April 04, 2015
+date: 2015/04/04
 collection: blog
 layout: post.hbt
 ---

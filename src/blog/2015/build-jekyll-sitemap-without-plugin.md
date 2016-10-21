@@ -2,7 +2,7 @@
 title: Build a Jekyll Sitemap Without Any Plugins
 description: Find out how you can build a Jekyll XML sitemap without any additional plugins or Gems.
 headline: Build a Jekyll Sitemap Without Any Plugins
-date: December 01, 2015
+date: 2015/12/01
 collection: blog
 layout: post.hbt
 ---

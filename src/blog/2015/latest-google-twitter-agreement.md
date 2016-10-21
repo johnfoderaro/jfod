@@ -2,7 +2,7 @@
 title: Update on the Latest Google-Twitter Agreement
 description: Google and Twitter have a new agreement together. Find out if this is any different than their brief 2009 partnership.
 headline: Update on the Latest Google-Twitter Agreement
-date: February 11, 2015
+date: 2015/02/11
 collection: blog
 layout: post.hbt
 ---

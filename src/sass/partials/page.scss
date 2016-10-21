@@ -50,7 +50,7 @@
   .date {
     font-family: 'Open Sans', sans-serif;
     font-size: 1.25em;
-    color: $orange;
+    color: lighten($gray, 25%);
   }
   .posts {
     display: flex;

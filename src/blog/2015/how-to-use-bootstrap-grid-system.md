@@ -2,7 +2,7 @@
 title: How to Use the Bootstrap Grid System Like a Boss
 description: Learn how to use the Bootstrap grid system. Create beautiful mobile-frist designs using these easy simple examples.
 headline: How to Use the Bootstrap Grid System Like a Boss
-date: March 15, 2015
+date: 2015/03/15
 collection: blog
 layout: post.hbt
 ---

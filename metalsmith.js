@@ -6,13 +6,16 @@ const markdown = require('metalsmith-markdown');
 const permalinks = require('metalsmith-permalinks');
 const collections = require('metalsmith-collections');
 const layouts = require('metalsmith-layouts');
+const metallic = require('metalsmith-metallic');
 const fs = require ('fs');
 
+//
 const util = require('util');
 
 // Handlebars Helpers
 const readTime = require('./lib/handlebars/read-time');
-const dateFormat = require('./lib/handlebars/date-format');
+const longDate = require('./lib/handlebars/long-date');
+const inspect  = require('./lib/handlebars/inspect');
 
 // Metalsmith pipeline
 function metalsmithBuild(callback) {
@@ -23,19 +26,20 @@ function metalsmithBuild(callback) {
     'js/src/**/*',
     'js/app.js'
   ]))
+  .use(metallic())
   .use(markdown({ gfm: true }))
+  .use(collections({
+    blog: {
+      pattern: 'blog/**/*.md',
+      sortBy: 'date',
+      reverse: true,
+    }
+  }))
   .use(permalinks({
     linksets: [{
       match: { collection: 'blog' },
-      pattern: ':blog/:title'
+      pattern: 'blog/:title'
     }]
-  }))
-  .use(collections({
-    articles: {
-      pattern: "src/blog/*.md",
-      sortyBy: "date",
-      reverse: true
-    }
   }))
   .use(layouts({
     engine:    'handlebars',
@@ -53,13 +57,20 @@ function metalsmithBuild(callback) {
   });
 }
 
-Handlebars.registerHelper('readTime', (item) => {
-  return new Handlebars.SafeString(readTime(item));
-});
+const helpers = [
+  ['readTime', readTime],
+  ['longDate', longDate]
+];
 
-Handlebars.registerHelper('dateFormat', (date)=> {
-  return new Handlebars.SafeString(dateFormat(date));
-});
+for (let i = 0; i < helpers.length; i++) {
+  handlebarsHelper(helpers[i][0], helpers[i][1]);
+}
+
+function handlebarsHelper(name, helper) {
+  Handlebars.registerHelper(name, (item) => {
+    return new Handlebars.SafeString(helper(item));
+  });
+}
 
 function metalsmithDebug(log) {
   return function(files, metalsmith, done) {
