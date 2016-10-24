@@ -10,6 +10,7 @@ const concat = require('gulp-concat');
 const uglify = require('gulp-uglify');
 const gutil = require('gulp-util');
 const babel = require('gulp-babel');
+const shell = require('gulp-shell');
 const metalsmithBuild = require('./metalsmith');
 
 // CSS pipeline
@@ -49,15 +50,6 @@ gulp.task('javascript', () => {
 
 // TODO Add image asset pipeline
 
-// Gulp depencencies copy
-// gulp.task('copy', () => {
-//   return gulp.src([
-//     './node_modules/jquery/dist/jquery.min.js',
-//     './node_modules/jquery-ui-dist/jquery-ui.min.js'
-//   ])
-//   .pipe(copy('./src/js/libraries', { prefix: 3 }));
-// });
-
 // Metalsmith build task
 gulp.task('build', (done) => {
   metalsmithBuild((error) => {
@@ -71,15 +63,25 @@ gulp.task('build', (done) => {
 });
 
 // Browsersync
-gulp.task('server', (done) => {
-  bs.init({
-    server: { baseDir: './build' },
-    notify: false
+gulp.task('browsersync', (done) => {
+  bs.init(null, {
+    proxy: 'http://localhost:3000',
+    files: ['build/**/*'],
+    notify: false,
+    port: 3001,
+    open: false
   }, () => done());
 });
 
+// Express
+gulp.task('express', (done) => {
+  gulp.src('/', { read: false })
+  .pipe(shell(['node express']));
+  done();
+});
+
 // Default task and watch tasks
-gulp.task('default', ['server', 'build'], () => {
+gulp.task('default', ['express', 'browsersync', 'build'], () => {
   // Watch Sass
   gulp.watch(['src/sass/**/*'], ['css']);
   // Watch JavaScript

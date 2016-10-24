@@ -20,6 +20,7 @@ const inspect  = require('./lib/handlebars/inspect');
 // Metalsmith pipeline
 function metalsmithBuild(callback) {
   Metalsmith(__dirname)
+  .clean(false)
   .use(ignore([
     'img/src/**/*',
     'sass/**/*',

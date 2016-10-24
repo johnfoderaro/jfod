@@ -1,0 +1,33 @@
+{{> head }}
+<body>
+  <div class="container">
+    {{> navigation }}
+    <div class="page">
+      <main>
+        {{{contents}}}
+        <form action="/submit" method="post" onsubmit="submitForm(this)">
+          <ul>
+            <li>
+              <label>Name</label>
+              <input type="text" name="name">
+            </li>
+            <li>
+              <label>Email</label>
+              <input type="email" name="email">
+            </li>
+            <li>
+              <label>Comment</label>
+              <textarea name="comment" rows="3"></textarea>
+            </li>
+            <li>
+              <button type="submit" name="send">Send</button>
+            </li>
+          </ul>
+        </form>
+      </main>
+    </div>
+    {{> footer }}
+  </div>
+  {{> scripts }}
+</body>
+</html>

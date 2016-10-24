@@ -1,4 +1,8 @@
 {
+  "globals": {
+    "XMLHttpRequest": true,
+    "FormData": true
+  },
   "esversion": 6,
   "node": true,
   "predef": [
