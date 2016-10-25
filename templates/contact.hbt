@@ -5,24 +5,15 @@
     <div class="page">
       <main>
         {{{contents}}}
-        <form action="/submit" method="post" onsubmit="submitForm(this)">
-          <ul>
-            <li>
-              <label>Name</label>
-              <input type="text" name="name">
-            </li>
-            <li>
-              <label>Email</label>
-              <input type="email" name="email">
-            </li>
-            <li>
-              <label>Comment</label>
-              <textarea name="comment" rows="3"></textarea>
-            </li>
-            <li>
-              <button type="submit" name="send">Send</button>
-            </li>
-          </ul>
+        <form id="contact-form">
+          <label>Name</label>
+          <input type="text" id="name" name="name">
+          <label>Email</label>
+          <input type="email" id="email" name="email">
+          <label>Comment</label>
+          <textarea rows="3" id="comment" name="comment"></textarea>
+          <input type="text" name="topic" style="display:none"/>
+          <button type="submit" id="submit" name="submit">Send</button>
         </form>
       </main>
     </div>

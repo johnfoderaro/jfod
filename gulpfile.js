@@ -66,7 +66,6 @@ gulp.task('build', (done) => {
 gulp.task('browsersync', (done) => {
   bs.init(null, {
     proxy: 'http://localhost:3000',
-    files: ['build/**/*'],
     notify: false,
     port: 3001,
     open: false

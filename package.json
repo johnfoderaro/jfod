@@ -36,6 +36,9 @@
   "dependencies": {
     "body-parser": "^1.15.2",
     "express": "^4.14.0",
+    "express-validator": "^2.21.0",
+    "helmet": "^2.3.0",
+    "multer": "^1.2.0",
     "nodemailer": "^2.6.4",
     "nodemailer-wellknown": "^0.2.0"
   }

@@ -2,19 +2,35 @@
 const gutil = require('gulp-util');
 const nodemailer = require('nodemailer');
 const express = require('express');
+const expressValidator = require('express-validator');
+const helmet = require('helmet');
 const app = express();
 const port = 3000;
-const router = express.Router();
 const bodyParser = require('body-parser');
+const multer = require('multer');
+const form = multer();
 const fs = require('fs');
 
-app.use(bodyParser.json());
+//TODO send reponse data to browser
+//TODO validation and sanitizing of user input
+
+app.use(helmet());
 app.use(bodyParser.urlencoded({ extended: true }));
-app.post('/submit', sendMail);
+app.use(bodyParser.json());
+app.use(expressValidator());
+app.post('/submit', form.array(), sendMail);
 app.use(express.static(__dirname + '/build/'));
 app.listen(port, () => gutil.log(`Express listening on port ${port}`));
 
 function sendMail(request, response) {
+  // Check honeypot
+  request.checkBody('name', 'Invalid entry.').isAlpha();
+  const error = request.validationErrors();
+  if (error) {
+    console.error(error);
+    response.send(error);
+    return;
+  }
   const transporter = nodemailer.createTransport({
     aliases: ["Me", "Mac"],
     domains: ["me.com", "mac.com"],
@@ -29,16 +45,18 @@ function sendMail(request, response) {
     from: readConfig('email'),
     to: readConfig('email'),
     subject: 'New Jfods.me Submission',
-    html: `<h2>Reply To</h2>
+    html: `<h2>From</h2>
+           <p>${request.body.name}</p>
+           <h2>Reply To</h2>
            <p>${request.body.email}</p>
            <h2>Comment</h2>
            <p>${request.body.comment}</p>`
 };
   transporter.sendMail(mailOptions, (error, info) => {
     if (error) {
-      response.json({status: 'error'});
+      response.send(error);
     } else {
-      response.json({status: 'success'});
+      response.send(info);
     }
   });
 }
