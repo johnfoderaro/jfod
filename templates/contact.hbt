@@ -11,9 +11,10 @@
           <label>Email</label>
           <input type="email" id="email" name="email">
           <label>Comment</label>
-          <textarea rows="3" id="comment" name="comment"></textarea>
+          <textarea rows="8" id="comment" name="comment"></textarea>
           <input type="text" name="topic" style="display:none"/>
           <button type="submit" id="submit" name="submit">Send</button>
+          <p id="form-message"></p>
         </form>
       </main>
     </div>

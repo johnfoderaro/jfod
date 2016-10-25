@@ -1,14 +1,16 @@
 <header>
   <nav>
-    <div class="title">
-      <a href="/"><span class="name">jfod</span>.me</a>
-    </div>
-    <div class="links">
-      <ul>
-        <li><a href="/blog">Blog</a></li>
-        <li><a href="/about">About</a></li>
-        <li><a href="/projects">Projects</a></li>
-      </ul>
+    <div class="flex-container">
+      <div class="title">
+        <a href="/"><span class="name">jfod</span>.me</a>
+      </div>
+      <div class="links">
+        <ul>
+          <li><a href="/blog">Blog</a></li>
+          <li><a href="/about">About</a></li>
+          <li><a href="/projects">Projects</a></li>
+        </ul>
+      </div>
     </div>
   </nav>
 </header>
