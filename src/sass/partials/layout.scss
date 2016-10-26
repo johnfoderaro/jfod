@@ -3,6 +3,14 @@ body {
   font-family: 'Open Sans', sans-serif;
   color: $text;
 }
+a {
+  color: $red;
+  text-decoration: none;
+  transition: all 0.2s;
+  &:hover {
+    color: darken($red, 20%);
+  }
+}
 header {
   nav {
     @media(min-width: $large-width) {
@@ -49,9 +57,7 @@ header {
         display: inline;
       }
       a {
-        text-decoration: none;
         font-size: 1.5em;
-        color: $red;
       }
       line-height: 2.5;
       word-spacing: 1.5em;
@@ -74,8 +80,10 @@ footer {
   }
 
   a {
-    text-decoration: none;
     color: $blue;
+    &:hover {
+      color: lighten($blue, 20%);
+    }
   }
 
   ul {

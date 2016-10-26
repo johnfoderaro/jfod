@@ -2,14 +2,6 @@
   main {
     padding-top: 2rem;
     padding-bottom: 2rem;
-    a {
-      color: $red;
-      text-decoration: none;
-      transition: all 0.2s;
-      &:hover {
-        color: darken($red, 30%);
-      }
-    }
     .headline {
       display: block;
       flex: 1 0 100%;
@@ -47,16 +39,15 @@
       }
       img {
         display: block;
-        max-width: 12rem;
+        max-width: 10rem;
         height: auto;
-        margin-top: 2rem;
+        margin-top: 2.5rem;
         margin-right: auto;
         margin-bottom: 0;
         margin-left: auto;
         border-radius: 50%;
         border: none;
         @media(min-width: $large-width) {
-          max-width: 10rem;
           margin-top: 0;
           margin-right: 0;
         }

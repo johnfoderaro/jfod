@@ -7,7 +7,7 @@
         {{{contents}}}
         <div class="posts">
         {{#each collections.blog }}
-          <h3><a href="/{{ this.path }}">{{ this.headline }}</a><br>{{ longDate this.date }}</h3>
+          <h2><a href="/{{ this.path }}">{{ this.headline }}</a><br>{{ longDate this.date }}</h2>
         {{/each}}
         </div>
       </main>

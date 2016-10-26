@@ -1,10 +1,10 @@
 .page {
   main {
-    padding-top: 2rem;
-    padding-bottom: 2rem;
+    padding-top: 1rem;
+    padding-bottom: 1rem;
     h1 {
       margin: 0;
-      font-size: 3em;
+      font-size: 2em;
       font-weight: 600;
       @media(min-width: $large-width) {
         font-size: 3em;
@@ -13,20 +13,23 @@
     h2 {
       margin-top: .5em;
       margin-bottom: .5em;
-      font-size: 2.5em;
-      font-weight: 300;
-    }
-    h3 {
-      margin-top: .5em;
-      margin-bottom: .5em;
-      font-size: 2em;
-      font-weight: 300;
-    }
-    h4 {
-      margin-top: .5em;
-      margin-bottom: .5em;
       font-size: 1.75em;
+      font-weight: 600;
+      @media(min-width: $large-width) {
+        font-size: 2.5em;
+      }
+    }
+    h3,
+    h4,
+    h5,
+    h6 {
+      margin-top: .5em;
+      margin-bottom: .5em;
+      font-size: 1.5em;
       font-weight: 300;
+      @media(min-width: $large-width) {
+        font-size: 2em;
+      }
     }
     a {
       color: $red;
@@ -41,6 +44,10 @@
       font-family: 'Lora', serif;
       line-height: 1.45;
     }
+    ol,
+    ul {
+      padding-left: 1.75rem;
+    }
     li {
       font-size: 1.25em;
       font-family: 'Lora', serif;
@@ -49,51 +56,96 @@
   }
   .date {
     font-family: 'Open Sans', sans-serif;
-    font-size: 1.25em;
-    color: lighten($gray, 25%);
+    font-size: 1em;
+    @media (min-width: $large-width) {
+      font-size: 1.25em;
+    }
+    color: lighten($gray, 20%);
   }
+
   .posts {
-    display: flex;
     flex-direction: column;
+    h2 {
+      padding-top: .5rem;
+      padding-bottom: .5rem;
+      font-size: 1.5em;
+      font-weight: 300;
+      @media (min-width: $large-width) {
+        font-size: 2em;
+        padding-top: 1rem;
+        padding-bottom: 1rem;
+      }
+    }
+    // a {
+    //   color: $blue;
+    //   text-decoration: none;
+    //   transition: all 0.2s;
+    //   &:hover {
+    //     color: darken($blue, 30%);
+    //   }
+    // }
   }
 }
 
 aside {
+  @media (max-width: $large-width) {
+    padding-bottom: 2rem;
+  }
   text-align: center;
+  a + svg {
+    font-size: 1.5em;
+    color: $blue;
+    text-decoration: none;
+    fill: $blue;
+
+    // svg {
+    //   transition: all 0.5s;
+    //   fill: $blue;
+    // }
+    &:hover + svg {
+      color: #fff;
+      fill: #fff;
+      // svg {
+      //   transition: all 0.5s;
+      //   fill: #fff;
+      // }
+    }
+  }
   .cta {
     display: block;
     padding-top: .75rem;
     padding-bottom: .75rem;
-    flex: 1 0 50%;
-    align-items: center;
-    transition: all 0.5s;
-    a {
-      // transition: all 0.5s;
-      font-size: 1.5em;
-      color: $blue;
-      text-decoration: none;
+    @media(min-width: $large-width) {
+      margin-bottom: 1rem;
     }
+    flex: 1 0 50%;
+    transition: all 0.5s;
     &:first-child {
+      border-top-right-radius: .5rem;
+      border-bottom-right-radius: 0;
+      border-bottom-left-radius: 0;
       border-top-left-radius: .5rem;
-      border-bottom-left-radius: .5rem;
+      @media(min-width: $large-width) {
+        border-top-right-radius: 0;
+        border-bottom-right-radius: 0;
+        border-bottom-left-radius: .5rem;
+        border-top-left-radius: .5rem;
+      }
     }
     &:last-child {
-      border-top-right-radius: .5rem;
+      border-top-right-radius: 0;
       border-bottom-right-radius: .5rem;
-    }
-    svg {
-      fill: $blue;
-      // transition: all 0.5s;
+      border-bottom-left-radius: .5rem;
+      border-top-left-radius: 0;
+      @media(min-width: $large-width) {
+        border-top-right-radius: .5rem;
+        border-bottom-right-radius: .5rem;
+        border-bottom-left-radius: 0;
+        border-top-left-radius: 0;
+      }
     }
     &:hover {
-      a {
-        color: #fff;
-      }
-      background: $blue;
-      svg {
-        // transition: all 0.5s;
-        fill: #fff;
-      }
+      background-color: $blue;
     }
   }
 }
