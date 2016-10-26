@@ -1,6 +1,6 @@
 body {
   background-color: $body;
-  font-family: 'Open Sans', sans-serif;
+  font-family: $sans-serif, sans-serif;
   color: $text;
 }
 a {
@@ -10,6 +10,12 @@ a {
   &:hover {
     color: darken($red, 20%);
   }
+}
+p {
+  font-size: 1.5em;
+  font-family: $serif, serif;
+  font-weight: 300;
+  line-height: 1.5;
 }
 header {
   nav {
@@ -76,6 +82,7 @@ footer {
   p {
     padding-top: .5em;
     font-size: 1rem;
+    font-family: $sans-serif, sans-serif;
     font-weight: 300;
   }
 

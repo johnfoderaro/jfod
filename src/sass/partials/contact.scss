@@ -42,7 +42,7 @@ form {
   #form-message {
     height: 2rem;
     text-align: center;
-    font-family: 'Open Sans', sans-serif;
+    font-family: $sans-serif, sans-serif;
   }
   .success-text {
     color: $green;

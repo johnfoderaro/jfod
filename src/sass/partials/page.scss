@@ -39,23 +39,23 @@
         color: darken($red, 30%);
       }
     }
-    p {
-      font-size: 1.25em;
-      font-family: 'Lora', serif;
-      line-height: 1.45;
-    }
+    // p {
+    //   font-size: 1.5em;
+    //   font-family: $serif, serif;
+    //   line-height: 1.5;
+    // }
     ol,
     ul {
       padding-left: 1.75rem;
     }
     li {
       font-size: 1.25em;
-      font-family: 'Lora', serif;
+      font-family: $serif, serif;
       line-height: 1.45;
     }
   }
   .date {
-    font-family: 'Open Sans', sans-serif;
+    font-family: $sans-serif, sans-serif;
     font-size: 1em;
     @media (min-width: $large-width) {
       font-size: 1.25em;

@@ -1,17 +1,40 @@
 // Font
-@import 'https://fonts.googleapis.com/css?family=Lora|Open+Sans:300,400';
+@import url('https://fonts.googleapis.com/css?family=Lato|Merriweather:300,400');
+
+$sans-serif: 'Lato';
+$serif: 'Merriweather';
+
+$color1: hsla(209%, 53%, 16%, 1); // dark blue
+$color2: hsla(199%, 100%, 29%, 1);// medium blue 1
+$color3: hsla(198%, 63%, 38%, 1); // medium blue2
+$color4: hsla(202%, 78%, 49%, 1); // light blue
+// $color5: hsla(186%, 28%, 93%, 1); // white
+$color5: hsla(180%, 20%, 99%, 1); // white
+
 
 // Color
 $black:  #383a42;
-$gray:   #60626C;
-$white:  #fafafa;
-$blue:   #0184bc;
-$red:    #e45649;
+$gray:   $color1;
+$white:  $color5;
+$blue:   $color2;
+$red:    $color4;
 $orange: #c18401;
 $purple: #a626a4;
 $green:  #50a14f;
-$link:   #4DB6C2;
+$link:   $color3;
 $text:   $gray;
+
+// // Color
+// $black:  #383a42;
+// $gray:   #60626C;
+// $white:  #fafafa;
+// $blue:   #0184bc;
+// $red:    #e45649;
+// $orange: #c18401;
+// $purple: #a626a4;
+// $green:  #50a14f;
+// $link:   #4DB6C2;
+// $text:   $gray;
 
 $large-width: 768px;
 $small-width: 767px;
