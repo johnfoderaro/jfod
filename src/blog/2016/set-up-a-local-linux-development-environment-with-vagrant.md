@@ -120,9 +120,7 @@ The next step is to add some instructions within your `Vagrantfile` for Vagrant 
 This `Vagrantfile` will handle the following items for you:
 
 1. Setting several constants around Linux OS, directories, users, and networking between host/guest machines
-
 2. Provisioning a virtual machine through VirtualBox, with 1 CPU, 512MB of memory, and 40GB of storage space
-
 3. Installing Apache2, Git, Ruby2.3 and Ruby2.3 dev package (both via Brightbox), Jekyll and Jekyll Paginate as root.
 
 **Sample:**

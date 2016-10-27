@@ -6,7 +6,7 @@ date: 2016/08/08
 collection: blog
 layout: post.hbt
 ---
-<p class="message">8/29/16: This guide currently reflects public beta 10.12, build 16A313a</p>
+<p class="message">10/24/16: This guide currently reflects the GM release 10.12.</p>
 
 During the World Wide Developers Conference on June 13, 2015, Apple officially announced that the next version of OS X will be branded as **macOS**. And with this latest iteration of the Mac desktop operating system -- dubbed **Sierra** -- the Californian landmark naming convention continues, too.
 

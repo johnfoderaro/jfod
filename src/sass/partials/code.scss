@@ -1,18 +1,16 @@
 pre {
   padding: 1rem;
-  background: lighten($white, 3.33%);
+  background: #f8f8f8;
   border-radius: .5rem;
   overflow-x: auto;
   code {
-    font-size: 1.05em;
-    font-family: Monaco, monospace;
+    font-family: 'Monaco', monospace;
     line-height: 1.75;
   }
 }
 
 code {
-  font-size: .8em;
-  font-family: Monaco, monospace;
+  font-family: 'Monaco', monospace;
   color: $blue;
 }
 
