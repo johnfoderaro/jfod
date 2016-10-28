@@ -275,17 +275,21 @@ aside {
         padding-bottom: 2rem;
     }
     text-align: center;
-
-    a + svg {
+    p {
+      font-size: 1em;
+      font-family: $sans-serif, sans-serif;
+    }
+    a {
         font-size: 1.5em;
         color: $blue;
         text-decoration: none;
         fill: $blue;
-        // svg {
-        //   transition: all 0.5s;
+        transition: all 0.5s;
         //   fill: $blue;
         // }
-        &:hover + svg {
+        // font-family: $sans-serif, sans-serif;
+
+        &:hover {
             color: #fff;
             fill: #fff;
             // svg {
