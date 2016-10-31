@@ -6,6 +6,7 @@
       <main>
         {{{contents}}}
         <div class="posts">
+          {{ log pagination }}
         {{#each collections.blog }}
           <h2><a href="/{{ this.path }}">{{ this.headline }}</a><br>{{ longDate this.date }}</h2>
         {{/each}}

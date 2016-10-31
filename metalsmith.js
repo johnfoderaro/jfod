@@ -7,10 +7,7 @@ const permalinks = require('metalsmith-permalinks');
 const collections = require('metalsmith-collections');
 const layouts = require('metalsmith-layouts');
 const metallic = require('metalsmith-metallic');
-const fs = require ('fs');
-
-//
-const util = require('util');
+const pagination = require('metalsmith-pagination');
 
 // Handlebars Helpers
 const readTime = require('./lib/handlebars/read-time');
@@ -27,8 +24,6 @@ function metalsmithBuild(callback) {
     'js/src/**/*',
     'js/app.js'
   ]))
-  .use(metallic())
-  .use(markdown({ gfm: true }))
   .use(collections({
     blog: {
       pattern: 'blog/**/*.md',
@@ -36,6 +31,16 @@ function metalsmithBuild(callback) {
       reverse: true,
     }
   }))
+  .use(pagination({
+    'collections.blog': {
+      perPage: 2,
+      template: 'index.md',
+      first: 'index.html',
+      path: 'page/:num/index.html'
+    }
+  }))
+  .use(metallic())
+  .use(markdown({ gfm: true }))
   .use(permalinks({
     linksets: [{
       match: { collection: 'blog' },
