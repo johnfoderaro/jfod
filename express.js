@@ -1,12 +1,13 @@
 'use strict';
+
 const gutil = require('gulp-util');
 const express = require('express');
 const expressValidator = require('express-validator');
 const helmet = require('helmet');
 const bodyParser = require('body-parser');
 const multer = require('multer');
-const sendMail = require('./lib/express/send-mail');
-const validators = require('./lib/express/validators');
+const sendMail = require('./lib/send-mail');
+const validators = require('./lib/validators');
 const app = express();
 const form = multer();
 const port = 3000;

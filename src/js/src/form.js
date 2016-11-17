@@ -6,10 +6,13 @@
     // Set an on submit event
     document.getElementById('contact-form').onsubmit = (event) => {
       event.preventDefault();
+      // Cache some constants
       const form = event.target;
       const data = new FormData(form);
       const xhr  = new XMLHttpRequest();
+      // Set post end-point
       xhr.open('post', '/submit', true);
+      // Send date
       xhr.send(data);
       // Update the send button to indicate progress
       document.getElementById('submit').textContent = 'Sending...';
@@ -41,13 +44,6 @@
       label.className = '';
     }
     if (response.validator) {
-      // // Remove any existing error classes
-      // for (let i = 0; i < fields.length; i++) {
-      //   let input = document.getElementById(fields[i]);
-      //   let label = input.previousElementSibling;
-      //   input.className = '';
-      //   label.className = '';
-      // }
       // Add classes to error items
       for (let i = 0; i < response.validator.length; i++) {
         let form = document.getElementById('contact-form');
@@ -66,18 +62,6 @@
       }
     }
     if (response.status) {
-      // // Remove any existing error classes
-      // for (let i = 0; i < fields.length; i++) {
-      //   let input = document.getElementById(fields[i]);
-      //   let label = input.previousElementSibling;
-      //   input.className = '';
-      //   label.className = '';
-      // }
-      // // Remove any existing messages
-      // if (document.getElementById('form-message')) {
-      //   document.getElementById('form-message').parentNode
-      //   .removeChild(document.getElementById('form-message'));
-      // }
       // Format and display message
       if (response.status.success) {
         form.insertAdjacentHTML('beforeend', `<p id="form-message" class="success-text">${response.status.success}</p>`);

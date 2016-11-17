@@ -20,17 +20,11 @@
     "gulp-sourcemaps": "^2.1.1",
     "gulp-uglify": "^2.0.0",
     "gulp-util": "^3.0.7",
-    "gulp-wrap": "^0.13.0",
     "handlebars": "^4.0.5",
-    "jquery": "^3.1.1",
     "metalsmith": "^2.2.0",
-    "metalsmith-collections": "^0.7.0",
     "metalsmith-ignore": "^0.1.2",
     "metalsmith-layouts": "^1.6.5",
     "metalsmith-markdown": "^0.2.1",
-    "metalsmith-metallic": "^2.0.1",
-    "metalsmith-permalinks": "^0.5.0",
-    "metalsmith-prism": "^3.0.1",
     "normalize-scss": "^5.0.3"
   },
   "dependencies": {
@@ -38,7 +32,6 @@
     "express": "^4.14.0",
     "express-validator": "^2.21.0",
     "helmet": "^2.3.0",
-    "metalsmith-pagination": "^1.4.0",
     "multer": "^1.2.0",
     "nodemailer": "^2.6.4",
     "nodemailer-wellknown": "^0.2.0"

@@ -48,10 +48,10 @@ form {
     color: $green;
   }
   .error-text {
-    color: $red;
+    color: $error;
   }
   .error-input {
-    color: $red;
-    border: 1px solid lighten($red, 10%);
+    color: $error;
+    border: 1px solid lighten($error, 10%);
   }
 }
