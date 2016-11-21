@@ -17,5 +17,5 @@ app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
 app.use(expressValidator(validators));
 app.post('/submit', form.array(), sendMail);
-app.use(express.static(__dirname + '/build/'));
+app.use(express.static(__dirname + '/build', { extensions: ['html'] }));
 app.listen(port, () => gutil.log(`Express listening on port ${port}`));

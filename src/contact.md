@@ -1,6 +1,8 @@
 ---
-title: About John Foderaro | JavaScript Developer
+name: contact
+title: Contact John Foderaro | JavaScript Developer
 layout: contact.hbt
+javascript: true
 ---
 
 # Contact

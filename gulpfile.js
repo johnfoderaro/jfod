@@ -2,15 +2,14 @@
 
 const bs = require('browser-sync').create();
 const gulp = require('gulp');
-const copy = require('gulp-copy');
-const sass = require('gulp-sass');
-const maps = require('gulp-sourcemaps');
-const rename = require('gulp-rename');
+const babel = require('gulp-babel');
 const concat = require('gulp-concat');
+const rename = require('gulp-rename');
+const sass = require('gulp-sass');
+const shell = require('gulp-shell');
+const maps = require('gulp-sourcemaps');
 const uglify = require('gulp-uglify');
 const gutil = require('gulp-util');
-const babel = require('gulp-babel');
-const shell = require('gulp-shell');
 const metalsmithBuild = require('./metalsmith');
 
 // CSS pipeline
@@ -67,8 +66,7 @@ gulp.task('browsersync', (done) => {
   bs.init(null, {
     proxy: 'http://localhost:3000',
     notify: false,
-    port: 3001,
-    open: false
+    port: 3001
   }, () => done());
 });
 
@@ -79,7 +77,10 @@ gulp.task('express', (done) => {
   done();
 });
 
-// Default task and watch tasks
+// Default production task
+gulp.task('production', ['express', 'build']);
+
+// Default development task
 gulp.task('default', ['express', 'browsersync', 'build'], () => {
   // Watch Sass
   gulp.watch(['src/sass/**/*'], ['css']);

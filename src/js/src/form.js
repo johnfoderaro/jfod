@@ -12,7 +12,7 @@
       const xhr  = new XMLHttpRequest();
       // Set post end-point
       xhr.open('post', '/submit', true);
-      // Send date
+      // Send data
       xhr.send(data);
       // Update the send button to indicate progress
       document.getElementById('submit').textContent = 'Sending...';
@@ -20,12 +20,15 @@
       // Handle the response
       xhr.onreadystatechange = () => {
         if(xhr.readyState === XMLHttpRequest.DONE) {
+          // Highlight fields and change button depending
+          // upon the response data
           highlighter(JSON.parse(xhr.responseText));
         }
       };
     };
   }
   function highlighter(response) {
+    console.log(response);
     const form = document.getElementById('contact-form');
     const fields = ['name', 'email', 'comment'];
     // Remove any existing messages
@@ -38,31 +41,33 @@
     document.getElementById('submit').disabled = false;
     // Remove any existing error classes
     for (let i = 0; i < fields.length; i++) {
-      let input = document.getElementById(fields[i]);
-      let label = input.previousElementSibling;
+      const input = document.getElementById(fields[i]);
+      const label = input.previousElementSibling;
       input.className = '';
       label.className = '';
     }
+    // Highlight invalid input fields
     if (response.validator) {
       // Add classes to error items
       for (let i = 0; i < response.validator.length; i++) {
-        let form = document.getElementById('contact-form');
-        let input = document.getElementById(response.validator[i].param);
-        let label = input.previousElementSibling;
+        const form = document.getElementById('contact-form');
+        const input = document.getElementById(response.validator[i].param);
+        const label = input.previousElementSibling;
         input.className = 'error-input';
         label.className = 'error-text';
-        // Display form message
+        // Display form error message if necessary
         if (response.validator.length === i + 1) {
+          // Clear existing form essages
           if (document.getElementById('form-message')) {
-            document.getElementById('form-message').parentNode
-            .removeChild(document.getElementById('form-message'));
+            document.getElementById('form-message').parentNode.removeChild(document.getElementById('form-message'));
           }
+          // Add error message
           form.insertAdjacentHTML('beforeend', `<p id="form-message" class="error-text">${response.validator[i].msg}</p>`);
         }
       }
     }
+    // Format and display error or sucess message once submitted
     if (response.status) {
-      // Format and display message
       if (response.status.success) {
         form.insertAdjacentHTML('beforeend', `<p id="form-message" class="success-text">${response.status.success}</p>`);
       }
