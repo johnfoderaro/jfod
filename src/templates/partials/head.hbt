@@ -1,8 +1,7 @@
-<!doctype html>
-<html lang="en">
 <head>
   <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, maximum-scale=1.0">
+  <meta name="viewport" content="initial-scale=1, maximum-scale=1">
+  <meta name="HandheldFriendly" content="true">
   <link rel="stylesheet" href="/css/main.min.css">
   <title>{{ title }}</title>
   <meta name="description" content="{{ description }}">

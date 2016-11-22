@@ -1,14 +1,14 @@
-{{> head }}
-<body>
-  <div class="container">
-    {{> navigation }}
-    <div class="page">
+<!doctype html>
+<html lang="en">
+  {{> head }}
+  <body>
+    <div class="container">
+      {{> navigation }}
       <main>
         {{{contents}}}
       </main>
+      {{> footer }}
     </div>
-    {{> footer }}
-  </div>
-  {{> scripts }}
-</body>
+    {{> scripts }}
+  </body>
 </html>

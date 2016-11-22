@@ -7,6 +7,7 @@ form {
   display: flex;
   flex-direction: column;
   justify-content: center;
+  max-width: 80%;
   @media(min-width: $large-width) {
     max-width: 50%;
   }
@@ -16,7 +17,8 @@ form {
     margin-bottom: .5rem;
     padding: .25rem;
     border-radius: .25rem;
-    border: 1px solid lighten($gray, 40%);
+    border: 1px solid lighten($blue-3, 40%);
+    -webkit-appearance: none;
   }
   button {
     margin-top: 1rem;
@@ -25,7 +27,7 @@ form {
     border: 0;
     border-radius: .25rem;
     color: #fff;
-    background-color: $blue;
+    background-color: $blue-2;
     transition: all 0.2s;
     cursor: pointer;
     &:disabled {
@@ -36,7 +38,7 @@ form {
       }
     }
     &:hover {
-      background-color: darken($blue, 10%);
+      background-color: darken($blue-2, 10%);
     }
   }
   #form-message {
@@ -48,10 +50,10 @@ form {
     color: $green;
   }
   .error-text {
-    color: $error;
+    color: $red;
   }
   .error-input {
-    color: $error;
-    border: 1px solid lighten($error, 10%);
+    color: $red;
+    border: 1px solid lighten($red, 10%);
   }
 }
