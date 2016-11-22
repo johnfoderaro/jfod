@@ -10,7 +10,7 @@ const shell = require('gulp-shell');
 const maps = require('gulp-sourcemaps');
 const uglify = require('gulp-uglify');
 const gutil = require('gulp-util');
-const metalsmithBuild = require('./metalsmith');
+const metalsmithBuild = require('./lib/metalsmith');
 
 // CSS pipeline
 gulp.task('css', () => {
@@ -73,7 +73,7 @@ gulp.task('browsersync', (done) => {
 // Express
 gulp.task('express', (done) => {
   gulp.src('/', { read: false })
-  .pipe(shell(['node express']));
+  .pipe(shell(['node ./bin/www']));
   done();
 });
 

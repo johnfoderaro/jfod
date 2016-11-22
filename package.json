@@ -1,10 +1,11 @@
 {
-  "name": "jfod.me-portfolio-website",
+  "name": "jfod.me",
   "version": "0.1.0",
   "description": "",
   "main": "gulpfile.js",
   "scripts": {
-    "test": "mocha"
+    "test": "mocha",
+    "start": "node ./lib/metalsmith && node ./bin/www"
   },
   "author": "John Foderaro",
   "devDependencies": {
