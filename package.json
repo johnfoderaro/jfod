@@ -5,7 +5,7 @@
   "main": "gulpfile.js",
   "scripts": {
     "test": "mocha",
-    "start": "node ./lib/metalsmith && node ./bin/www"
+    "start": "node ./lib/build && node ./bin/www"
   },
   "author": "John Foderaro",
   "devDependencies": {
