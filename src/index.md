@@ -1,7 +1,9 @@
 ---
 name: home
 title: John Foderaro | JavaScript Developer
+description: John Foderaro is a JavaScript developer from New Jersey, who specializes in engineering solutions within the Node.js ecosystem.
 layout: home.hbt
+home: true
 ---
 
 Hello! I'm a JavaScript developer from New Jersey, who specializes in engineering solutions within the Node.js ecosystem, with a concentration on server-side JavaScript. And while I enjoy spending my time on a Linux server, I'm certainly no stranger to the browser.
