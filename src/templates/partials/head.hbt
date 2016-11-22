@@ -3,6 +3,7 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, maximum-scale=1.0">
+  <link rel="stylesheet" href="/css/main.min.css">
   <title>{{ title }}</title>
   <meta name="description" content="{{ description }}">
   {{# home }}
@@ -10,5 +11,20 @@
   {{ else }}
   <link rel="canonical" href="http://jfod.me/{{ name }}" />
   {{/ home }}
-  <link rel="stylesheet" href="/css/main.min.css">
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:site" content="@JohnFoderaro">
+  <meta name="twitter:creator" content="@JohnFoderaro">
+  <meta name="twitter:title" content="{{ title }}">
+  <meta name="twitter:description" content="{{ description }}">
+  <meta name="twitter:image" content="http://jfod.me/img/twitter.png">
+  <meta property="og:site_name" content="jfod.me">
+  <meta property="og:title" content="{{ title }}">
+  {{# home }}
+  <meta property="og:url" content="http://jfod.me/">
+  {{ else }}
+  <meta property="og:url" content="http://jfod.me/{{ name }}">
+  {{/ home }}
+  <meta property="og:description" content="{{ description }}">
+  <meta property="og:image" content="http://jfod.me/img/facebook.png">
+  <meta property="og:type" content="article">
 </head>

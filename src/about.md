@@ -1,6 +1,7 @@
 ---
 name: about
 title: About John Foderaro | JavaScript Developer
+description: Want to say hi or kick around an idea? You can find me on Twitter, LinkedIn, or you can contact me directly.
 layout: page.hbt
 ---
 
@@ -32,7 +33,7 @@ I'm also fully experienced in the usual front-end disciplines, such as semantic 
 
 On the personal side of things, I spend a lot of free time pursuing various Node.js projects and ideas. I'm always learning and always coding on a nearly daily basis. I also really enjoy technical writing with a focus on this industry, both in the form of insightful commentary and practical tutorials.
 
-I currently live in central New Jersey with my lovely wife. Outside of the engineering and development stuff, I’m a big tech enthusiast and also enjoy New Jersey's beautiful beaches.
+I currently live in central New Jersey with my lovely wife. Outside of the engineering and development stuff, I'm a big tech enthusiast and also enjoy New Jersey's beautiful beaches.
 
 ## Drop me a line
 
