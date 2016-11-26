@@ -2,14 +2,29 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="initial-scale=1, maximum-scale=1">
   <meta name="HandheldFriendly" content="true">
-  <link rel="stylesheet" href="/css/main.min.css">
   <title>{{ title }}</title>
   <meta name="description" content="{{ description }}">
-  {{# home }}
-  <link rel="canonical" href="http://jfod.me/" />
-  {{ else }}
-  <link rel="canonical" href="http://jfod.me/{{ name }}" />
-  {{/ home }}
+  <link rel="stylesheet" href="/css/main.min.css">
+  <link rel="apple-touch-icon-precomposed" sizes="57x57" href="/img/57x57.png" />
+  <link rel="apple-touch-icon-precomposed" sizes="60x60" href="/img/60x60.png" />
+  <link rel="apple-touch-icon-precomposed" sizes="72x72" href="/img/72x72.png" />
+  <link rel="apple-touch-icon-precomposed" sizes="76x76" href="/img/76x76.png" />
+  <link rel="apple-touch-icon-precomposed" sizes="114x114" href="/img/114x114.png" />
+  <link rel="apple-touch-icon-precomposed" sizes="120x120" href="/img/120x120.png" />
+  <link rel="apple-touch-icon-precomposed" sizes="144x144" href="/img/144x144.png" />
+  <link rel="apple-touch-icon-precomposed" sizes="152x152" href="/img/152x152.png" />
+  <link rel="icon" type="image/png" href="/img/16x16.png" sizes="16x16" />
+  <link rel="icon" type="image/png" href="/img/32x32.png" sizes="32x32" />
+  <link rel="icon" type="image/png" href="/img/96x96.png" sizes="96x96" />
+  <link rel="icon" type="image/png" href="/img/128x128.png" sizes="128x128" />
+  <link rel="icon" type="image/png" href="/img/196x196.png" sizes="196x196" />
+  <meta name="application-name" content="jfod.me"/>
+  <meta name="msapplication-TileColor" content="#fcfdfd" />
+  <meta name="msapplication-TileImage" content="mstile-144x144.png" />
+  <meta name="msapplication-square70x70logo" content="mstile-70x70.png" />
+  <meta name="msapplication-square150x150logo" content="mstile-150x150.png" />
+  <meta name="msapplication-wide310x150logo" content="mstile-310x150.png" />
+  <meta name="msapplication-square310x310logo" content="mstile-310x310.png" />
   <meta name="twitter:card" content="summary">
   <meta name="twitter:site" content="@JohnFoderaro">
   <meta name="twitter:creator" content="@JohnFoderaro">
@@ -18,12 +33,22 @@
   <meta name="twitter:image" content="http://jfod.me/img/twitter.png">
   <meta property="og:site_name" content="jfod.me">
   <meta property="og:title" content="{{ title }}">
-  {{# home }}
-  <meta property="og:url" content="http://jfod.me/">
-  {{ else }}
-  <meta property="og:url" content="http://jfod.me/{{ name }}">
-  {{/ home }}
   <meta property="og:description" content="{{ description }}">
   <meta property="og:image" content="http://jfod.me/img/facebook.png">
   <meta property="og:type" content="article">
+  {{# home }}
+  <meta property="og:url" content="http://jfod.me/">
+  <link rel="canonical" href="http://jfod.me/" />
+  {{ else }}
+  <meta property="og:url" content="http://jfod.me/{{ name }}">
+  <link rel="canonical" href="http://jfod.me/{{ name }}" />
+  {{/ home }}
+  <script>
+    // (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+    // (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+    // m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+    // })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+    // ga('create', 'UA-88058101-1', 'auto');
+    // ga('send', 'pageview');
+  </script>
 </head>

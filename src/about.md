@@ -3,11 +3,12 @@ name: about
 title: About John Foderaro | JavaScript Developer
 description: Want to say hi or kick around an idea? You can find me on Twitter, LinkedIn, or you can contact me directly.
 layout: page.hbt
+about: true
 ---
 
 # About
 
-## My name is **John Foderaro** and I'm a **JavaScript developer** from New Jersey.
+## My name is **John Foderaro** and I'm a JavaScript developer from New Jersey.
 
 I specialize in engineering solutions within the Node.js ecosystem, with a concentration on server-side JavaScript. I enjoy spending my time on a Linux server, but I'm certainly no stranger to the browser.
 
@@ -38,3 +39,5 @@ I currently live in central New Jersey with my lovely wife. Outside of the engin
 ## Drop me a line
 
 Want to to say hi or kick around an idea? You can find me on [Twitter](https://www.twitter.com/johnfoderaro), [LinkedIn](https://www.linkedin.com/in/jfoderaro), or you can [contact me directly](/contact).
+
+*Cheers!* 🍻

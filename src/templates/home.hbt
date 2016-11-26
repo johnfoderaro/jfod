@@ -2,26 +2,11 @@
 <html lang="en">
   {{> head }}
   <body>
-    <div class="container">
-      {{> navigation }}
-      <main>
-        <div class="flex-wrapper">
-          <div class="headline">
-            <h1>John Foderaro</h1>
-            <h2>JavaScript Developer</h2>
-          </div>
-          <div class="headshot">
-            <img src="http://placehold.it/200x200.png"/>
-          </div>
-        </div>
-        <div class="flex-wrapper">
-          <div class="content">
-            {{{contents}}}
-          </div>
-        </div>
-      </main>
-      {{> footer }}
-    </div>
+    {{> navigation }}
+    <main>
+      {{{ contents }}}
+    </main>
+    {{> footer }}
     {{> scripts }}
   </body>
 </html>

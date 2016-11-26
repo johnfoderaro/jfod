@@ -5,13 +5,18 @@ $serif: 'Merriweather';
 
 // Colors
 $gray:   #eee;
-$white:  hsla(180%, 20%, 99%, 1);  // white
-$blue-1: hsla(202%, 78%, 49%, 1);  // light
-$blue-2: hsla(199%, 100%, 29%, 1); // regular
-$blue-3: hsla(209%, 53%, 16%, 1);  // dark
-$link:   hsla(198%, 63%, 38%, 1);
+$white:  #fcfdfd;
+$blue-1: #0a3650;
+$blue-2: #006594;
+$blue-3: #132a3e;
+$link-1: #1b97de;
+$link-2: #ff9200;
 $text:   $blue-3;
 $body:   $white;
+
+// Panel colors
+$font-colors:        $text #fff $text #fff;
+$background-colors:  $gray $blue-2 $white $blue-1;
 
 // Form highlighting
 $green:  #50a14f;

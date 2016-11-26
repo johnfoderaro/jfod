@@ -1,16 +1,18 @@
 <header>
   <nav>
-    <div class="flex-wrapper">
-      <div class="title">
-        <a href="/"><span class="name">jfod</span>.me</a>
-      </div>
-      <div class="links">
-        <ul>
-          <li><a href="/about">About</a></li>
-          <li><a href="https://medium.com/@JohnFoderaro/latest" target="_blank">Blog</a></li>
-          <li><a href="https://github.com/johnfoderaro" target="_blank">Projects</a></li>
-          <li><a href="/contact">Contact</a></li>
-        </ul>
+    <div class="container">
+      <div class="flex-wrapper">
+        <div class="title">
+          <a href="/"><span class="name">jfod</span>.me</a>
+        </div>
+        <div class="links">
+          <ul>
+            <li><a href="/about">About</a></li>
+            <li><a href="https://medium.com/@JohnFoderaro/latest" target="_blank">Blog</a></li>
+            <li><a href="https://github.com/johnfoderaro" target="_blank">Projects</a></li>
+            <li><a href="/contact">Contact</a></li>
+          </ul>
+        </div>
       </div>
     </div>
   </nav>

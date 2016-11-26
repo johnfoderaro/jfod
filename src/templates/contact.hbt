@@ -1,9 +1,10 @@
-{{> head }}
-<body>
-  <div class="container">
+<!doctype html>
+<html lang="en">
+  {{> head }}
+  <body>
     {{> navigation }}
-    <div class="page">
-      <main>
+    <main>
+      <div class="container">
         {{{contents}}}
         <form id="contact-form">
           <label>Name</label>
@@ -16,10 +17,9 @@
           <button type="submit" id="submit" name="submit">Send</button>
           <p id="form-message"></p>
         </form>
-      </main>
-    </div>
-    {{> footer }}
-  </div>
+      </div>
+    </main>
+  {{> footer }}
   {{> scripts }}
 </body>
 </html>

@@ -1,0 +1,8 @@
+@mixin panel-colors {
+    @for $i from 1 through length($font-colors) {
+        &:nth-child(#{length($font-colors)}n+#{$i}) {
+            color: nth($font-colors, $i);
+            background: nth($background-colors, $i)
+        }
+    }
+}

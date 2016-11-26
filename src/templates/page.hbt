@@ -2,13 +2,13 @@
 <html lang="en">
   {{> head }}
   <body>
-    <div class="container">
-      {{> navigation }}
-      <main>
+    {{> navigation }}
+    <main>
+      <div class="container">
         {{{contents}}}
-      </main>
-      {{> footer }}
-    </div>
+      </div>
+    </main>
+    {{> footer }}
     {{> scripts }}
   </body>
 </html>

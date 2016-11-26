@@ -8,6 +8,7 @@ form {
   flex-direction: column;
   justify-content: center;
   max-width: 80%;
+  font-size: 1.25em;
   @media(min-width: $large-width) {
     max-width: 50%;
   }
@@ -23,7 +24,7 @@ form {
   button {
     margin-top: 1rem;
     margin-bottom: .5rem;
-    height: 2.5rem;
+    height: 3.25rem;
     border: 0;
     border-radius: .25rem;
     color: #fff;

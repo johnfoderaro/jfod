@@ -1,34 +1,30 @@
 'use strict';
 
 (() => {
-  // Check if #contact-form is present
-  if (document.getElementById('contact-form') !== null) {
-    // Set an on submit event
-    document.getElementById('contact-form').onsubmit = (event) => {
-      event.preventDefault();
-      // Cache some constants
-      const form = event.target;
-      const data = new FormData(form);
-      const xhr  = new XMLHttpRequest();
-      // Set post end-point
-      xhr.open('post', '/submit', true);
-      // Send data
-      xhr.send(data);
-      // Update the send button to indicate progress
-      document.getElementById('submit').textContent = 'Sending...';
-      document.getElementById('submit').disabled = true;
-      // Handle the response
-      xhr.onreadystatechange = () => {
-        if(xhr.readyState === XMLHttpRequest.DONE) {
-          // Highlight fields and change button depending
-          // upon the response data
-          highlighter(JSON.parse(xhr.responseText));
-        }
-      };
+  // Set an on submit event
+  document.getElementById('contact-form').onsubmit = (event) => {
+    event.preventDefault();
+    // Cache some constants
+    const form = event.target;
+    const data = new FormData(form);
+    const xhr  = new XMLHttpRequest();
+    // Set post end-point
+    xhr.open('post', '/submit', true);
+    // Send data
+    xhr.send(data);
+    // Update the send button to indicate progress
+    document.getElementById('submit').textContent = 'Sending...';
+    document.getElementById('submit').disabled = true;
+    // Handle the response
+    xhr.onreadystatechange = () => {
+      if(xhr.readyState === XMLHttpRequest.DONE) {
+        // Highlight fields and change button depending
+        // upon the response data
+        highlighter(JSON.parse(xhr.responseText));
+      }
     };
-  }
+  };
   function highlighter(response) {
-    console.log(response);
     const form = document.getElementById('contact-form');
     const fields = ['name', 'email', 'comment'];
     // Remove any existing messages
