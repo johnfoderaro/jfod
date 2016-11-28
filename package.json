@@ -5,7 +5,7 @@
   "main": "gulpfile.js",
   "scripts": {
     "test": "mocha",
-    "start": "node ./lib/build && node ./bin/www"
+    "start": "NODE_ENV=production node ./lib/build && NODE_ENV=production node ./bin/www"
   },
   "author": "John Foderaro",
   "devDependencies": {
