@@ -69,6 +69,7 @@
   h1 {
     margin-top: 0.25em;
     margin-bottom: 0;
+    font-size: 3.5em;
   }
   h2 {
     margin: 0;
@@ -108,7 +109,7 @@
   &:nth-child(even) {
     .text {
       @media(min-width: $large-width) {
-        flex: 1 0 65%;
+        flex: 1 0 60%;
         align-items: flex-start;
         order: 1;
         text-align: left;
@@ -116,7 +117,7 @@
     }
     .icon {
       @media(min-width: $large-width) {
-        flex: 1 0 35%;
+        flex: 1 0 40%;
         align-items: flex-end;
         order: 2;
         text-align: right;
@@ -135,15 +136,15 @@
   &:nth-child(odd) {
     .text {
       @media(min-width: $large-width) {
-        flex: 1 0 65%;
+        flex: 1 0 60%;
         align-items: flex-end;
         order: 3;
-        text-align: right;
+        text-align: left;
       }
     }
     .icon {
       @media(min-width: $large-width) {
-        flex: 1 0 35%;
+        flex: 1 0 40%;
         align-items: flex-start;
         order: 1;
         text-align: left;
