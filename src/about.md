@@ -18,7 +18,6 @@ As an open source supporter and proponent, I firmly believe that open source sof
 
 - JavaScript
 - Node.js Ecosystem
-- Electron
 - React
 - Angular
 - MongoDB
