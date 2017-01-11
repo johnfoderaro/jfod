@@ -1,6 +1,6 @@
 body {
   background-color: $white;
-  font-family: $sans-serif, sans-serif;
+  // font-family: $sans-serif, sans-serif;
   color: $text;
   font-size: 14px;
   @media (min-width: $large-width) {
@@ -33,7 +33,7 @@ ul {
 
 li {
   font-size: 1.25em;
-  font-family: $serif, serif;
+  // font-family: $serif, serif;
   line-height: 1.5;
   font-weight: 300;
 }
