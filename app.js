@@ -14,9 +14,9 @@ app.use(bodyParser.json());
 app.use(expressValidator(validators));
 app.use('/submit', contact);
 app.use(express.static(__dirname + '/public', { extensions: ['html'] }));
-app.use((request, response, next) => {
-  response.status(404);
-  response.sendFile(__dirname + '/public/not-found.html', { extesions: ['html'] });
+app.use((req, res) => {
+  res.status(404);
+  res.sendFile(__dirname + '/public/not-found.html', { extesions: ['html'] });
 });
 
 module.exports = app;
