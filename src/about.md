@@ -8,7 +8,7 @@ about: true
 
 # About
 
-## My name is **John Foderaro** and I'm a JavaScript developer from New Jersey.
+My name is **John Foderaro** and I'm a JavaScript developer from New Jersey.
 
 I specialize in engineering solutions within the Node.js ecosystem, with a concentration on server-side JavaScript. I enjoy spending my time on a Linux server, but I'm certainly no stranger to the browser.
 
