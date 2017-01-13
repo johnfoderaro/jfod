@@ -4,9 +4,11 @@
   <body>
     {{> navigation }}
     <main>
-      <div class="container">
-        {{{contents}}}
-      </div>
+      <article>
+        <div class="container">
+          {{{contents}}}
+        </div>
+      </article>
     </main>
     {{> footer }}
     {{> scripts }}

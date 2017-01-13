@@ -1,28 +1,18 @@
 body {
   background-color: $white;
-  font-family: $sans-serif, sans-serif;
   color: $text;
-  font-size: 14px;
-  @media (min-width: $large-width) {
-    font-size: 18px;
+  @media (max-width: $small-width) {
+    font-size: 14px;
   }
 }
 
-h1 {
-  font-size: 2.25em;
-  font-weight: 400;
-}
 
-h2 {
-  font-size: 1.75em;
-  font-weight: 400;
-}
-
+h1,
+h2,
 h3,
 h4,
 h5,
 h6 {
-  font-size: 1.5em;
   font-weight: 400;
 }
 
@@ -33,6 +23,7 @@ ul {
 
 li {
   font-size: 1.25em;
+  font-family: $alt-font-family;
   line-height: 1.5;
 }
 
@@ -47,7 +38,7 @@ a {
 
 p {
   font-size: 1.25em;
-  font-family: $serif, serif;
+  font-family: $alt-font-family;
   line-height: 1.5;
   overflow-wrap: break-word;
 }
@@ -58,10 +49,8 @@ strong {
 
 header {
   nav {
-    padding-top: .5rem;
-    @media(min-width: $large-width) {
-      padding-top: 0;
-    }
+    padding-top: .75rem;
+    padding-bottom: .75rem;
     align-items: center;
     text-align: center;
   }
@@ -75,8 +64,7 @@ footer {
   justify-content: center;
   flex-grow: 1;
   text-align: center;
-  p,
-  a {
+  p {
     font-family: $sans-serif, sans-serif;
   }
   ul {
@@ -86,11 +74,12 @@ footer {
     list-style: none;
   }
   li {
+    padding-top: 0.5rem;
+    padding-bottom: 0.5rem;
     margin-right: 1rem;
     margin-left: 1rem;
     font-size: 1.25em;
-    padding-top: 0.5rem;
-    padding-bottom: 0.5rem;
+    font-family: $base-font-family;
     @media(min-width: $small-width) {
       display: inline;
     }

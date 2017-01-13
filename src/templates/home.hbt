@@ -4,7 +4,9 @@
   <body>
     {{> navigation }}
     <main>
-      {{{ contents }}}
+      <article>
+        {{{ contents }}}
+      </article>
     </main>
     {{> footer }}
     {{> scripts }}

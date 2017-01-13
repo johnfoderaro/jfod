@@ -40,33 +40,26 @@
   }
   li {
     display: inline;
-    font-size: 1.3em;
-  }
-  a {
-    // font-family: $sans-serif, sans-serif;
-    line-height: 2.75;
+    font-family: $base-font-family;
   }
 }
 
-
 // Hero section
 .hero {
-  // padding-bottom: 2.75rem;
-  padding-top: 2rem;
-  padding-bottom: 2rem;
+  padding-top: 1rem;
+  padding-bottom: 3rem;
   text-align: center;
   @media(min-width: $large-width) {
-    padding-top: 4rem;
-    padding-bottom: 4rem;
+    padding-top: 2rem;
+    padding-bottom: 6rem;
   }
   text-align: center;
   hr {
     border: 0; // reset
-    border-bottom: 0.25em solid $gray;
+    border-bottom: .25px solid $link-1;
   }
   h1 {
-    margin-top: 0;
-    margin-bottom: 0;
+    margin: 0;
     font-size: 2.25em;
     @media(min-width: $large-width) {
       font-size: 3.25em;
@@ -75,7 +68,7 @@
   h2 {
     margin: 0;
     font-size: 1.5em;
-    font-family: $serif, serif;
+    font-family: $alt-font-family;
     line-height: 1.5;
     @media(min-width: $large-width) {
       font-size: 1.65em;
@@ -97,7 +90,7 @@
     font-size: 2.25em;
   }
   p {
-    margin-bottom: 0;
+    margin: 0;
     font-size: 1.65em;
   }
   svg {

@@ -4,6 +4,7 @@
   <body>
     {{> navigation }}
     <main>
+      <article>
       <div class="container">
         {{{contents}}}
         <form id="contact-form">
@@ -18,6 +19,7 @@
           <p id="form-message"></p>
         </form>
       </div>
+    </article>
     </main>
   {{> footer }}
   {{> scripts }}
