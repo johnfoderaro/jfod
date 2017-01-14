@@ -47,7 +47,26 @@ gulp.task('javascript', () => {
   .pipe(gulp.dest('./src/js'));
 });
 
-// TODO Add image asset pipeline
+gulp.task('build-helper', ['build', 'express'], (done) => {
+  const buildFlag = (() => {
+    let status = false;
+    return (bool) => {
+      if (bool) status = true;
+      return status;
+    };
+  })();
+  if (!buildFlag()) {
+    bs.init({
+      proxy: 'http://localhost:3000',
+      notify: false,
+      port: 3001
+    }, () => {
+      buildFlag(true);
+      done();
+    });
+  }
+  if (buildFlag()) return bs.reload();
+});
 
 // Metalsmith build task
 gulp.task('build', (done) => {
@@ -56,19 +75,18 @@ gulp.task('build', (done) => {
       gutil.log(error);
     } else {
       done();
-      bs.reload();
     }
   });
 });
 
-// Browsersync
-gulp.task('browsersync', (done) => {
-  bs.init(null, {
-    proxy: 'http://localhost:3000',
-    notify: false,
-    port: 3001
-  }, () => done());
-});
+// // Browsersync
+// gulp.task('browsersync', (done) => {
+//   bs.init(null, {
+//     proxy: 'http://localhost:3000',
+//     notify: false,
+//     port: 3001
+//   }, () => done());
+// });
 
 // Express
 gulp.task('express', (done) => {
@@ -77,11 +95,8 @@ gulp.task('express', (done) => {
   done();
 });
 
-// Default production task
-gulp.task('production', ['express', 'build']);
-
 // Default development task
-gulp.task('default', ['express', 'browsersync', 'build'], () => {
+gulp.task('default', ['build-helper'], () => {
   // Watch Sass
   gulp.watch(['src/sass/**/*'], ['css']);
   // Watch JavaScript
@@ -100,5 +115,5 @@ gulp.task('default', ['express', 'browsersync', 'build'], () => {
     'src/js/libraries/**/*.js',
     'src/js/libraries/**/*.map',
     'src/img/**/*'
-  ], ['build']);
+  ], ['build-helper']);
 });
