@@ -13,10 +13,11 @@ app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
 app.use(expressValidator(validators));
 app.use('/submit', contact);
-app.use(express.static(__dirname + '/public', { extensions: ['html'] }));
+app.use(express.static(__dirname + '/build', { extensions: ['html'] }));
 app.use((req, res) => {
   res.status(404);
-  res.sendFile(__dirname + '/public/not-found.html', { extesions: ['html'] });
+  res.sendFile(__dirname + '/build/not-found.html', { extesions: ['html'] });
 });
 
 module.exports = app;
+  

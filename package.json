@@ -5,12 +5,13 @@
   "main": "gulpfile.js",
   "scripts": {
     "test": "mocha",
-    "start": "NODE_ENV=production node ./bin/build && NODE_ENV=production node ./bin/www"
+    "start": "NODE_ENV=production node ./bin/metalsmith && NODE_ENV=production node ./bin/www"
   },
   "author": "John Foderaro",
   "devDependencies": {
     "babel-preset-es2015": "^6.16.0",
     "browser-sync": "^2.17.3",
+    "del": "^2.2.2",
     "gulp": "^3.9.1",
     "gulp-babel": "^6.1.2",
     "gulp-concat": "^2.6.0",

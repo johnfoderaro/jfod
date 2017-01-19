@@ -1,6 +1,7 @@
 'use strict';
 
 const bs = require('browser-sync').create();
+const del = require('del');
 const gulp = require('gulp');
 const babel = require('gulp-babel');
 const concat = require('gulp-concat');
@@ -45,19 +46,35 @@ gulp.task('javascript', () => {
     .pipe(gulp.dest('./src/js'));
 });
 
-gulp.task('browsersync', (done) => {
-  bs.init(null, {
-    proxy: 'http://localhost:3000',
-    notify: false,
-    port: 3001
-  }, () => done());
-});
-
 gulp.task('build', (done) => {
   metalsmithBuild((error) => {
-    if (error) gutil.log(error);
-    else done();
+    if (error) {
+      gutil.log(error);
+    } else {
+      done();
+    }
   });
+});
+
+gulp.task('browsersync', ['build'], (done) => {
+  const buildFlag = (() => {
+    let status = false;
+    return (bool) => {
+      if (bool) status = true;
+      return status;
+    };
+  })();
+  if (!buildFlag()) {
+    bs.init({
+      proxy: 'http://localhost:3000',
+      notify: false,
+      port: 3001
+    }, () => {
+      buildFlag(true);
+      done();
+    });
+  }
+  if (buildFlag()) return bs.reload();
 });
 
 gulp.task('express', (done) => {
@@ -66,7 +83,7 @@ gulp.task('express', (done) => {
   done();
 });
 
-gulp.task('default', ['express', 'build', 'browser-sync'], () => {
+gulp.task('default', ['express', 'browsersync'], () => {
   gulp.watch(['src/sass/**/*'], ['css']);
   gulp.watch(['src/js/src/**/*'], ['javascript']);
   gulp.watch([
@@ -82,5 +99,5 @@ gulp.task('default', ['express', 'build', 'browser-sync'], () => {
     'src/js/libraries/**/*.js',
     'src/js/libraries/**/*.map',
     'src/img/**/*'
-  ], ['build']);
+  ], ['browsersync']);
 });
