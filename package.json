@@ -21,18 +21,18 @@
     "gulp-sourcemaps": "^2.1.1",
     "gulp-uglify": "^2.0.0",
     "gulp-util": "^3.0.7",
-    "handlebars": "^4.0.5",
-    "metalsmith": "^2.2.0",
-    "metalsmith-ignore": "^0.1.2",
-    "metalsmith-layouts": "^1.6.5",
-    "metalsmith-markdown": "^0.2.1",
     "normalize-scss": "^5.0.3"
   },
   "dependencies": {
     "body-parser": "^1.15.2",
     "express": "^4.14.0",
     "express-validator": "^2.21.0",
+    "handlebars": "^4.0.6",
     "helmet": "^2.3.0",
+    "metalsmith": "^2.2.0",
+    "metalsmith-ignore": "^0.1.2",
+    "metalsmith-layouts": "^1.6.5",
+    "metalsmith-markdown": "^0.2.1",
     "multer": "^1.2.0",
     "nodemailer": "^2.6.4",
     "nodemailer-wellknown": "^0.2.0"
