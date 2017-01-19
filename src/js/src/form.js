@@ -49,8 +49,8 @@
         const form = document.getElementById('contact-form');
         const input = document.getElementById(response.validator[i].param);
         const label = input.previousElementSibling;
-        input.className = 'error-input';
-        label.className = 'error-text';
+        input.className = 'input';
+        label.className = 'text';
         // Display form error message if necessary
         if (response.validator.length === i + 1) {
           // Clear existing form essages
@@ -58,17 +58,17 @@
             document.getElementById('form-message').parentNode.removeChild(document.getElementById('form-message'));
           }
           // Add error message
-          form.insertAdjacentHTML('beforeend', `<p id="form-message" class="error-text">${response.validator[i].msg}</p>`);
+          form.insertAdjacentHTML('beforeend', `<p id="form-message" class="form-message error">${response.validator[i].msg}</p>`);
         }
       }
     }
     // Format and display error or sucess message once submitted
     if (response.status) {
       if (response.status.success) {
-        form.insertAdjacentHTML('beforeend', `<p id="form-message" class="success-text">${response.status.success}</p>`);
+        form.insertAdjacentHTML('beforeend', `<p id="form-message" class="form-message success">${response.status.success}</p>`);
       }
       if (response.status.error) {
-        form.insertAdjacentHTML('beforeend', `<p id="form-message" class="error-text">${response.status.error}</p>`);
+        form.insertAdjacentHTML('beforeend', `<p id="form-message" class="form-message error">${response.status.error}</p>`);
       }
     }
   }

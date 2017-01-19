@@ -45,3 +45,14 @@ p {
 strong {
   font-weight: 600;
 }
+
+.container {
+  @include content-wrapper;
+}
+.flex-wrapper {
+  display: flex;
+  flex-direction: column;
+  @media(min-width: $large-width) {
+    flex-direction: row;
+  }
+}

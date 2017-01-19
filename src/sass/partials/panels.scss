@@ -1,53 +1,6 @@
-// Container and wrapper
-.container {
-  @include content-wrapper;
-}
-.flex-wrapper {
-  display: flex;
-  flex-direction: column;
-  @media(min-width: $large-width) {
-    flex-direction: row;
-  }
-}
-
-// Nav items
-.title {
-  @media(min-width: $large-width) {
-    flex: 1 0 0;
-    align-items: flex-start;
-    text-align: left;
-  }
-  a {
-    color: $blue-2;
-    text-decoration: none;
-    font-size: 2em;
-    @media(min-width: $large-width) {
-      font-size: 2.5em;
-    }
-  }
-}
-.links {
-  word-spacing: 1.6em;
-  @media(min-width: $large-width) {
-    flex: 2 0 0;
-    align-items: flex-end;
-    text-align: right;
-  }
-  ul {
-    margin: 0;
-    padding: 0;
-    list-style: none;
-  }
-  li {
-    display: inline;
-    font-family: $base-font-family;
-  }
-}
-
-// Hero section
 .hero {
-  padding-top: 1rem;
-  padding-bottom: 3rem;
+  // padding-top: 1rem;
+  padding-bottom: 1.25rem;
   text-align: center;
   @media(min-width: $large-width) {
     padding-top: 2rem;
@@ -60,7 +13,7 @@
   }
   h1 {
     margin: 0;
-    font-size: 2.25em;
+    font-size: 2.5em;
     @media(min-width: $large-width) {
       font-size: 3.25em;
     }
@@ -78,6 +31,7 @@
 
 // Home page panels
 .panel {
+  @include panel-colors;
   padding-top: 2rem;
   padding-bottom: 2rem;
   text-align: center;
@@ -90,7 +44,10 @@
     font-size: 2.25em;
   }
   p {
-    margin: 0;
+    margin-top: 0;
+    @media(min-width: $large-width) {
+      margin: 0;
+    }
     font-size: 1.65em;
   }
   svg {
@@ -150,7 +107,7 @@
       fill: $blue-2;
     }
   }
-  // vertical align on desktop
+
   .icon {
     @media(min-width: $large-width) {
       margin-top: 1rem;
@@ -159,6 +116,4 @@
       justify-content: center;
     }
   }
-  // Set font and background colors
-  @include panel-colors;
 }

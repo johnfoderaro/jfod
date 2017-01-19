@@ -1,12 +1,10 @@
 <header>
   <nav>
     <div class="container">
-      <div class="flex-wrapper">
-        <div class="title">
-          <a href="/">jfod.me</a>
-        </div>
-        <div class="links">
-          <ul>
+      <div class="navbar">
+        <div class="flex-wrapper">
+          <a href="/" class="brand">jfod.me</a>
+          <ul class="links">
             <li><a href="/about">About</a></li>
             <li><a href="https://medium.com/@JohnFoderaro/latest" target="_blank">Blog</a></li>
             <li><a href="https://github.com/johnfoderaro" target="_blank">Projects</a></li>
