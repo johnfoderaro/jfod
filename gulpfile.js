@@ -12,23 +12,21 @@ const uglify = require('gulp-uglify');
 const gutil = require('gulp-util');
 const metalsmithBuild = require('./lib/metalsmith');
 
-// CSS pipeline
 gulp.task('css', () => {
   return gulp.src('./src/sass/main.scss')
-  .pipe(maps.init())
-  .pipe(sass({
-    outputStyle: 'compressed',
-    includePaths: [
-      './src/sass/mixins/*',
-      './src/sass/partials/*',
-    ]
-  }).on('error', sass.logError))
-  .pipe(rename({suffix: '.min'}))
-  .pipe(maps.write('./'))
-  .pipe(gulp.dest('./src/css'));
+    .pipe(maps.init())
+    .pipe(sass({
+      outputStyle: 'compressed',
+      includePaths: [
+        './src/sass/mixins/*',
+        './src/sass/partials/*',
+      ]
+    }).on('error', sass.logError))
+    .pipe(rename({suffix: '.min'}))
+    .pipe(maps.write('./'))
+    .pipe(gulp.dest('./src/css'));
 });
 
-// JavaScript pipeline
 gulp.task('javascript', () => {
   return gulp.src([
     './src/js/**/*.js',
@@ -36,72 +34,41 @@ gulp.task('javascript', () => {
     '!./src/js/app.min.js',
     '!./src/js/libraries/**/*.js',
   ])
-  .pipe(babel({
-    presets: ['es2015']
-  }))
-  .pipe(concat('app.min.js'))
-  .pipe(gulp.dest('./src/js'))
-  .pipe(maps.init())
-  .pipe(uglify().on('error', gutil.log))
-  .pipe(maps.write('./'))
-  .pipe(gulp.dest('./src/js'));
+    .pipe(babel({
+      presets: ['es2015']
+    }))
+    .pipe(concat('app.min.js'))
+    .pipe(gulp.dest('./src/js'))
+    .pipe(maps.init())
+    .pipe(uglify().on('error', gutil.log))
+    .pipe(maps.write('./'))
+    .pipe(gulp.dest('./src/js'));
 });
 
-gulp.task('build-helper', ['build', 'express'], (done) => {
-  const buildFlag = (() => {
-    let status = false;
-    return (bool) => {
-      if (bool) status = true;
-      return status;
-    };
-  })();
-  if (!buildFlag()) {
-    bs.init({
-      proxy: 'http://localhost:3000',
-      notify: false,
-      port: 3001
-    }, () => {
-      buildFlag(true);
-      done();
-    });
-  }
-  if (buildFlag()) return bs.reload();
+gulp.task('browsersync', (done) => {
+  bs.init(null, {
+    proxy: 'http://localhost:3000',
+    notify: false,
+    port: 3001
+  }, () => done());
 });
 
-// Metalsmith build task
 gulp.task('build', (done) => {
   metalsmithBuild((error) => {
-    if (error) {
-      gutil.log(error);
-    } else {
-      done();
-    }
+    if (error) gutil.log(error);
+    else done();
   });
 });
 
-// // Browsersync
-// gulp.task('browsersync', (done) => {
-//   bs.init(null, {
-//     proxy: 'http://localhost:3000',
-//     notify: false,
-//     port: 3001
-//   }, () => done());
-// });
-
-// Express
 gulp.task('express', (done) => {
   gulp.src('/', { read: false })
-  .pipe(shell(['node ./bin/www']));
+    .pipe(shell(['node ./bin/www']));
   done();
 });
 
-// Default development task
-gulp.task('default', ['build-helper'], () => {
-  // Watch Sass
+gulp.task('default', ['express', 'build', 'browser-sync'], () => {
   gulp.watch(['src/sass/**/*'], ['css']);
-  // Watch JavaScript
   gulp.watch(['src/js/src/**/*'], ['javascript']);
-  // Watch for Handlebars and/or HTML, build site
   gulp.watch([
     'templates/**/*.html',
     'templates/**/*.hbt',
@@ -115,5 +82,5 @@ gulp.task('default', ['build-helper'], () => {
     'src/js/libraries/**/*.js',
     'src/js/libraries/**/*.map',
     'src/img/**/*'
-  ], ['build-helper']);
+  ], ['build']);
 });
