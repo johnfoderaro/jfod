@@ -30,6 +30,7 @@ a {
   color: $link-1;
   text-decoration: none;
   transition: all 0.2s;
+
   &:hover {
     color: darken($link-1, 20%);
   }
@@ -49,6 +50,7 @@ strong {
 .container {
   @include content-wrapper;
 }
+
 .flex-wrapper {
   display: flex;
   flex-direction: column;

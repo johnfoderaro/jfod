@@ -9,52 +9,62 @@
   flex-direction: column;
   justify-content: center;
   max-width: 80%;
-  font-size: 1.25em;
   @media(min-width: $large-width) {
     max-width: 50%;
   }
+  font-size: 1.25em;
+
+
   input,
   textarea {
-    margin-top: .5rem;
-    margin-bottom: .5rem;
-    padding: .25rem;
-    border-radius: .25rem;
+    margin-top: 0.5rem;
+    margin-bottom: 0.5rem;
+    padding: 0.25rem;
+    border-radius: 0.25rem;
     border: 1px solid lighten($blue-3, 40%);
     -webkit-appearance: none;
   }
+
   button {
     margin-top: 1rem;
-    margin-bottom: .5rem;
+    margin-bottom: 0.5rem;
     height: 3.25rem;
     border: 0;
-    border-radius: .25rem;
+    border-radius: 0.25rem;
     color: #fff;
     background-color: $blue-2;
     transition: all 0.2s;
     cursor: pointer;
+
     &:disabled {
       background-color: $green;
+
       &:hover {
         cursor: default;
         background-color: $green;
       }
     }
+
     &:hover {
       background-color: darken($blue-2, 10%);
     }
   }
+
   .form-message {
     height: 2rem;
     text-align: center;
     font-size: 1.15em;
     font-family: $base-font-family;
   }
+
   .success {
     color: $green;
   }
+
   .error {
     color: $red;
   }
+
   .input {
     color: $red;
     border: 1px solid lighten($red, 10%);
