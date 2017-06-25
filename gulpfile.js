@@ -12,7 +12,7 @@ const maps = require('gulp-sourcemaps');
 const uglify = require('gulp-uglify');
 const gutil = require('gulp-util');
 const metalsmithBuild = require('./lib/metalsmith');
-
+ 
 gulp.task('css', () => {
   return gulp.src('./src/sass/main.scss')
     .pipe(maps.init())
