@@ -1,6 +1,6 @@
 ---
 name: about
-title: About John Foderaro | JavaScript Developer
+title: About John Foderaro | Software Engineer
 description: Want to say hi or kick around an idea? You can find me on Twitter, LinkedIn, or you can contact me directly.
 layout: page.hbt
 about: true
