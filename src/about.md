@@ -21,27 +21,7 @@ As an open source supporter and proponent, I firmly believe that open source sof
 - Full-stack web development
 - Asynchronous programming
 - API design and development
-- Express
-- MongoDB
-- Redis
-- npm
-- Git
-- Docker
-- NGINX
-- Apache
-- Linux
-- Shell
-- Electron
-- React
-- HTML5
-- CSS3
-- Sass
-- LESS
-- jQuery
-- oAuth2
-- TDD
-- Templating
-- Transpilers
+- Test driven development
 
 This list above only scrapes the surface, but in short, I'm incredibly proficient in all things JavaScript. Especially server-side JavaScript, along with the tools, programs, and utilities related to, and including, the Node.js ecosystem.
 
