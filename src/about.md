@@ -23,9 +23,11 @@ As an open source supporter and proponent, I firmly believe that open source sof
 - API design and development
 - Test driven development
 
-This list above only scrapes the surface, but in short, I'm incredibly proficient in all things JavaScript. Especially server-side JavaScript, along with the tools, programs, and utilities related to, and including, the Node.js ecosystem.
+This list above only scrapes the surface, but in short, I'm proficient in all things JavaScript. Especially server-side JavaScript, along with the tools, programs, and utilities related to, and including, the Node.js ecosystem.
 
 I'm also fully experienced in the usual front-end disciplines, such as semantic HTML and modern CSS (as well as Sass and LESS), the Document Object Model, and modern web standards and best practices around accessibility and current design trends.
+
+Lately I've become a React convert and really enjoy this great open source framework as it's doing a tremendous job in propelling the web forward.
 
 ### The personal side of things
 
