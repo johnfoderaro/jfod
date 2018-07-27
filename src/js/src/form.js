@@ -1,8 +1,7 @@
-'use strict';
-
-(() => {
-  // Set an on submit event
-  document.getElementById('contact-form').onsubmit = (event) => {
+// Set an on submit event
+const contactForm = document.getElementById('contact-form');
+if (contactForm) {
+  form.onsubmit = (event) => {
     event.preventDefault();
     // Cache some constants
     const form = event.target;
@@ -72,4 +71,4 @@
       }
     }
   }
-})();
+}
