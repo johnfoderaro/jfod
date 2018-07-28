@@ -2,41 +2,22 @@
 name: about
 title: About John Foderaro | Software Engineer
 description: Want to say hi or kick around an idea? You can find me on Twitter, LinkedIn, or you can contact me directly.
-layout: page.hbt
+layout: about.hbt
 about: true
 ---
 
-# About
+# About Me
 
-My name is **John Foderaro** and I'm a software engineer from New Jersey.
+My name is John Foderaro and I'm a software engineer from New Jersey, specializing in Node.js and full stack JavaScript. I have a knack for creativity in my approach to programming and an eye for the smaller, finer details.
 
-I specialize in engineering solutions within the Node.js ecosystem, with a concentration on server-side JavaScript. I enjoy spending my time on a Linux server, but I'm certainly no stranger to the browser.
+I love to constantly learn, and as a self-taught software engineer, I really enjoy sharing knowledge and ideas with my peers in an effort to support their very own growth and development. I know exactly what it's like to embark on the journey of learning software engineering and can easily put myself into the shoes of someone learning and just starting out. My philosophy is that the world of coding and creating software should be fun, open, and filled with wonderment, focusing on exploring and learning new concepts.
 
-As an open source supporter and proponent, I firmly believe that open source software, especially in recent years, has led to the overall growth of this industry as a whole. Node.js and the current world of JavaScript is a perfect example. This is a good thing.
+### Check out <a href="/john-foderaro-resume.pdf" target="_blank">my resume</a> to learn more about my professional skills and achievements.
 
-### Skills and proficiencies
+Outside of work, I love to develop and engineer my own side projects and explore new libraries and frameworks. On occasion I enjoy blogging and technical writing and plan to continue to add more posts in the very near future.
 
-- JavaScript
-- Node.js Ecosystem
-- Full-stack web development
-- Asynchronous programming
-- API design and development
-- Test driven development
+When I'm not at a computer, I enjoy home improvement DIY projects, landscaping and gardening, and the outdoors -- specifically New Jersey's beautiful beaches!
 
-This list above only scrapes the surface, but in short, I'm proficient in all things JavaScript. Especially server-side JavaScript, along with the tools, programs, and utilities related to, and including, the Node.js ecosystem.
-
-I'm also fully experienced in the usual front-end disciplines, such as semantic HTML and modern CSS (as well as Sass and LESS), the Document Object Model, and modern web standards and best practices around accessibility and current design trends.
-
-Lately I've become a React convert and really enjoy this great open source framework as it's doing a tremendous job in propelling the web forward.
-
-### The personal side of things
-
-On the personal side of things, I spend a lot of free time pursuing various Node.js projects and ideas. I'm always learning and always coding on a nearly daily basis. I also really enjoy technical writing with a focus on this industry, both in the form of insightful commentary and practical tutorials.
-
-I currently live in central New Jersey with my lovely wife. Outside of the engineering and development stuff, I'm a big tech enthusiast and also enjoy New Jersey's beautiful beaches.
-
-## Drop me a line
-
-Want to to say hi or kick around an idea? You can find me on [Twitter](https://www.twitter.com/johnfoderaro), [LinkedIn](https://www.linkedin.com/in/jfoderaro), or you can [contact me directly](/contact).
+Feel free to get in touch with me. You can find me on [Twitter](https://www.twitter.com/johnfoderaro), [LinkedIn](https://www.linkedin.com/in/jfoderaro), or you can [contact me directly](/contact).
 
 *Cheers!* 🍻

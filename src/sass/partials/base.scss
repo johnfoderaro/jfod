@@ -51,6 +51,22 @@ strong {
   @include content-wrapper;
 }
 
+.container.about {
+  img {
+    padding-top: 1.25rem;
+    padding-bottom: 1rem;
+    padding-left: 1rem;
+    max-width: 160px;
+    float: right;
+    @media(min-width: $large-width) {
+      padding-top: 2.25rem;
+      padding-left: 2rem;
+      max-width: 300px;
+      float: right;
+    }
+  }
+}
+
 .flex-wrapper {
   display: flex;
   flex-direction: column;

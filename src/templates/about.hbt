@@ -1,0 +1,17 @@
+<!doctype html>
+<html lang="en">
+  {{> head }}
+  <body>
+    {{> navigation }}
+    <main>
+      <article>
+        <div class="container about">
+          <img src="/john-foderaro-software-engineer.png"/>
+          {{{contents}}}
+        </div>
+      </article>
+    </main>
+    {{> footer }}
+    {{> scripts }}
+  </body>
+</html>
