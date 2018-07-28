@@ -6,7 +6,7 @@
     <main>
       <article>
         <div class="container about">
-          <img src="/john-foderaro-software-engineer.png"/>
+          <img src="/john-foderaro-software-engineer.png" alt="john foderaro software engineer"/>
           {{{contents}}}
         </div>
       </article>

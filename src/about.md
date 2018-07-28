@@ -12,7 +12,7 @@ My name is John Foderaro and I'm a software engineer from New Jersey, specializi
 
 I love to constantly learn, and as a self-taught software engineer, I really enjoy sharing knowledge and ideas with my peers in an effort to support their very own growth and development. I know exactly what it's like to embark on the journey of learning software engineering and can easily put myself into the shoes of someone learning and just starting out. My philosophy is that the world of coding and creating software should be fun, open, and filled with wonderment, focusing on exploring and learning new concepts.
 
-### Check out <a href="/john-foderaro-resume.pdf" target="_blank" alt="john foderaro software engineer">my resume</a> to learn more about my professional skills and achievements.
+### Check out <a href="/john-foderaro-resume.pdf" target="_blank">my resume</a> to learn more about my professional skills and achievements.
 
 Outside of work, I love to develop and engineer my own side projects and explore new libraries and frameworks. On occasion I enjoy blogging and technical writing and plan to continue to add more posts in the very near future.
 
