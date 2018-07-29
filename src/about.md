@@ -8,9 +8,9 @@ about: true
 
 # About Me
 
-My name is John Foderaro and I'm a software engineer from New Jersey, specializing in Node.js and full stack JavaScript. I have a knack for creativity in my approach to programming and an eye for the smaller, finer details.
+My name is **John Foderaro** and I'm a software engineer from New Jersey, specializing in Node.js and full stack JavaScript. I have a knack for creativity in my approach to programming and an eye for the smaller, finer details.
 
-I love to constantly learn, and as a self-taught software engineer, I really enjoy sharing knowledge and ideas with my peers in an effort to support their very own growth and development. I know exactly what it's like to embark on the journey of learning software engineering and can easily put myself into the shoes of someone learning and just starting out. My philosophy is that the world of coding and creating software should be fun, open, and filled with wonderment, focusing on exploring and learning new concepts.
+I love to constantly learn, and as a self-taught software engineer, I really enjoy sharing knowledge and ideas with my peers in an effort to support their very own growth and development. I know exactly what it's like to embark on the journey of learning software engineering and can easily put myself into the shoes of someone just starting out. My philosophy is that the world of coding and creating software should be fun, open, and filled with wonderment, focusing on exploring and learning new concepts.
 
 ### Check out <a href="/john-foderaro-resume.pdf" target="_blank">my resume</a> to learn more about my professional skills and achievements.
 
