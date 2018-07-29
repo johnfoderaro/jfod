@@ -1,9 +1,9 @@
 <footer>
   <nav>
     <ul>
-      <li><a href="https://www.github.com/johnfoderaro" target="_blank">GitHub</a></li>
+      <li><a href="https://github.com/johnfoderaro" target="_blank">GitHub</a></li>
       <li><a href="https://www.npmjs.com/~johnfoderaro" target="_blank">npm</a></li>
-      <li><a href="https://www.twitter.com/johnfoderaro" target="_blank">Twitter</a></li>
+      <li><a href="https://twitter.com/johnfoderaro" target="_blank">Twitter</a></li>
       <li><a href="https://www.linkedin.com/in/jfoderaro" target="_blank">LinkedIn</a></li>
       <li><a href="/john-foderaro-resume.pdf" target="_blank">Resume</a></li>
       <li><a href="/contact">Contact</a></li>
