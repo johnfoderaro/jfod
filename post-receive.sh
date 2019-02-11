@@ -13,7 +13,7 @@ npm i --production -s --loglevel silent
 
 # Build site
 echo "Building website... "
-npm start
+npm run prod
 
 # Test site
 echo "Testing website build... "
