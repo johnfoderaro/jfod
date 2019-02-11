@@ -1,8 +1,0 @@
-@mixin content-wrapper {
-  padding: .5rem calc(50% - 400px);
-  margin-right: 1rem;
-  margin-left: 1rem;
-  @media(min-width: $large-width) {
-    padding: 1rem calc(50% - 400px);
-  }
-}

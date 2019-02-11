@@ -1,3 +1,3 @@
-# Jfod.me Portfolio Site
+# jfod.me portfolio site
 
-Simple portfolio website with an Express app for the contact form using Nodemailer.
+Static website built with Metalsmith and hosted with Digital Ocean.

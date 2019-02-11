@@ -1,0 +1,29 @@
+{{> header }}
+  <div class="container">
+    <div class="main">
+      {{{ contents }}}
+    </div>
+    <div class="articles">
+      <h3>Latest articles</h2>
+      <ul class="recent">
+        {{#each articles }}
+          <li><a href="/{{ trimHtmlExt path }}/">{{ title }}</a></li>
+        {{/each}}
+        <li><a href="/articles/">View all articles</a></li>
+      </ul>
+    </div>
+    <div class="links">
+      <h3>Links and resources</h2>
+      <ul>
+        <li><a href="/">Home</a></li>
+        <li><a href="/about/">About</a></li>
+        <li><a href="/articles/">Articles</a></li>
+        <li><a href="/resume.pdf">Resume</a></li>
+        <li><a href="https://www.linkedin.com/in/jfoderaro/">LinkedIn</a></li>
+        <li><a href="https://twitter.com/JohnFoderaro">Twitter</a></li>
+        <li><a href="https://github.com/johnfoderaro">GitHub</a></li>
+        <li><a href="https://www.npmjs.com/~johnfoderaro">npm</a></li>
+      </ul>
+    </div>
+  </div>
+{{> footer }}

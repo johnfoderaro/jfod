@@ -1,0 +1,284 @@
+$large: 768px;
+$white: #f2f2f2;
+$red1: #c32232;
+$red2: #981b27;
+$red3: #6d131c;
+$red4: #410b11;
+$red5: #160406;
+$red6: rgba(22, 4, 6, 0.6);
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-size: 24px;
+  font-family: 
+    -apple-system,
+    BlinkMacSystemFont,
+    'Segoe UI',
+    Roboto,
+    Helvetica,
+    Arial,
+    sans-serif,
+    'Apple Color Emoji', 
+    'Segoe UI Emoji',
+    'Segoe UI Symbol';
+  color: $red5;
+  background-color: $white;
+}
+
+.container {
+  padding: 2rem calc(50% - 350px);
+  margin-right: 1rem;
+  margin-left: 1rem;
+}
+
+h1 {
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+  font-weight: 800;
+}
+
+h2 {
+  margin-top: 2rem;
+  margin-bottom: 2rem;
+  font-weight: 300;
+}
+
+h3 {
+  margin-top: 2rem;
+  margin-bottom: 2rem;
+  font-weight: 300;
+}
+
+p {
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+  line-height: 1.25;
+  font-weight: 300;
+}
+
+a {
+  color: $red1;
+  text-decoration: none; 
+}
+
+ul { list-style-position:inside; }
+li {
+  margin-top: .25rem;
+  margin-bottom: .25rem;
+}
+
+article {
+  h1 { width: initial; }
+  p { font-family: serif; }
+}
+
+footer {
+  margin-top: 2rem;
+  margin-bottom: 2rem;
+  font-size: .75em;
+  text-align: center;
+  color: $red6;
+}
+
+footer {
+  a { color: $red4 }
+  ul { margin-top: 1rem; }
+  li {
+    font-size: .75em;
+    display: inline;
+    margin-right: .5rem;
+    margin-left: .5rem;
+    &:first-child { margin-left: 0; }
+    &:last-child { margin-right: 0; }
+  }
+}
+
+img {
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+  width: 100%;
+  height: auto;
+  border-radius: .5rem;
+}
+
+blockquote {
+  margin-top: 2rem;
+  margin-bottom: 2rem;
+  padding-left: 1rem;
+  border-left: 2px solid #ddd;
+  color: $red6;
+  &:nth-child(even) {
+    margin-top: 0;
+    margin-bottom: 4rem;
+    border: none;
+  }
+}
+
+pre {
+  margin-top: 2rem;
+  margin-bottom: 2rem;
+  padding: .25rem;
+  overflow-x: auto;
+  border-radius: .5rem;
+}
+
+code {
+  font-family: Monaco, Consolas, monospace;
+  font-size: 16px;
+}
+
+.main {
+  h1 {
+    font-size: 4rem;
+    @media(min-width: 768px) {
+      font-size: 8rem;
+    }
+  }
+}
+
+.social {
+  a {
+    color: $red1;
+  }
+}
+
+.article {
+  h1 {
+    font-size: 10vw;
+    @media(min-width: $large) {
+      font-size: 6rem;
+    }
+  }
+}
+
+.byline {
+  margin-top: 2rem;
+  margin-bottom: 2rem;
+  font-size: 1em;
+  font-weight: 200;
+  font-style: italic;
+}
+
+.byline {
+  span {
+    display: block;
+  }
+}
+
+.articles {
+  a {
+    color: $red2;
+  }
+}
+
+.links {
+  a {
+    color: $red3;
+  }
+}
+
+/* a11y-light theme */
+/* Based on the Tomorrow Night Eighties theme: https://github.com/isagalaev/highlight.js/blob/master/src/styles/tomorrow-night-eighties.css */
+/* @author: ericwbailey */
+
+/* Comment */
+.hljs-comment,
+.hljs-quote {
+  color: #696969;
+}
+
+/* Red */
+.hljs-variable,
+.hljs-template-variable,
+.hljs-tag,
+.hljs-name,
+.hljs-selector-id,
+.hljs-selector-class,
+.hljs-regexp,
+.hljs-deletion {
+  color: #d91e18;
+}
+
+/* Orange */
+.hljs-number,
+.hljs-built_in,
+.hljs-builtin-name,
+.hljs-literal,
+.hljs-type,
+.hljs-params,
+.hljs-meta,
+.hljs-link {
+  color: #aa5d00;
+}
+
+/* Yellow */
+.hljs-attribute {
+  color: #aa5d00;
+}
+
+/* Green */
+.hljs-string,
+.hljs-symbol,
+.hljs-bullet,
+.hljs-addition {
+  color: #008000;
+}
+
+/* Blue */
+.hljs-title,
+.hljs-section {
+  color: #007faa;
+}
+
+/* Purple */
+.hljs-keyword,
+.hljs-selector-tag {
+  color: #7928a1;
+}
+
+.hljs {
+  display: block;
+  overflow-x: auto;
+  background: #fefefe;
+  color: #545454;
+  padding: 0.5em;
+}
+
+.hljs-emphasis {
+  font-style: italic;
+}
+
+.hljs-strong {
+  font-weight: bold;
+}
+
+@media screen and (-ms-high-contrast: active) {
+  .hljs-addition,
+  .hljs-attribute,
+  .hljs-built_in,
+  .hljs-builtin-name,
+  .hljs-bullet,
+  .hljs-comment,
+  .hljs-link,
+  .hljs-literal,
+  .hljs-meta,
+  .hljs-number,
+  .hljs-params,
+  .hljs-string,
+  .hljs-symbol,
+  .hljs-type,
+  .hljs-quote {
+        color: highlight;
+    }
+
+    .hljs-keyword,
+    .hljs-selector-tag {
+        font-weight: bold;
+    }
+}
+

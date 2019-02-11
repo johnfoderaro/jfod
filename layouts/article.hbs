@@ -1,0 +1,49 @@
+{{>header author=author }}
+  <div class="container">
+    <article>
+      <div class="article">
+        <h1>{{title}}</h1>
+        <div class="byline">
+          <span>Published {{formatDate date}}</span>
+          <span>By {{author}}</span>
+          <span>{{ readingTime }} read time</span>
+        </div>
+        {{{contents}}}
+      </div>
+    </article>
+    <aside>
+      <div class="social">
+        <h3>Like what you've read?</h3>
+        <ul>
+          <li><a href="https://twitter.com/intent/tweet?text={{title}}&url=https://jfod.me/{{ trimHtmlExt this.path}}/&via=johnfoderaro" target="_blank">Share on Twitter</a></li>
+          <li><a href="#">Buy me a coffee</a></li>
+        </ul>
+      </div>
+      <div class="articles">
+        <h3>Recent Articles</h3>
+        <ul>
+          {{#if this.next.path }}
+          <li><a href="/{{ trimHtmlExt this.next.path }}/">{{this.next.title}}</a></li>
+          {{/if}}
+          {{#if this.previous.path }}
+          <li><a href="/{{ trimHtmlExt this.previous.path }}/">{{this.previous.title}}</a></li>
+          {{/if}}
+          <li><a href="/articles/">View all articles</a></li>
+        </ul>
+      </div>
+      <div class="links">
+        <h3>Links and resources</h3>
+        <ul>
+          <li><a href="/">Home</a></li>
+          <li><a href="/about/">About</a></li>
+          <li><a href="/articles/">Articles</a></li>
+          <li><a href="/resume.pdf">Resume</a></li>
+          <li><a href="https://www.linkedin.com/in/jfoderaro/">LinkedIn</a></li>
+          <li><a href="https://twitter.com/JohnFoderaro">Twitter</a></li>
+          <li><a href="https://github.com/johnfoderaro">GitHub</a></li>
+          <li><a href="https://www.npmjs.com/~johnfoderaro">npm</a></li>
+        </ul>
+      </div>
+    </aside>
+  </div>
+{{>footer}}
