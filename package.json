@@ -26,12 +26,12 @@
     "metalsmith-register-helpers": "^0.4.0",
     "metalsmith-sass": "^1.6.0",
     "metalsmith-sitemap": "^1.2.2",
-    "metalsmith-word-count": "0.0.4"
+    "metalsmith-word-count": "0.0.4",
+    "mocha": "^5.2.0"
   },
   "devDependencies": {
     "eslint": "^5.12.1",
     "eslint-config-airbnb-base": "^13.1.0",
-    "eslint-plugin-import": "^2.16.0",
-    "mocha": "^5.2.0"
+    "eslint-plugin-import": "^2.16.0"
   }
 }
