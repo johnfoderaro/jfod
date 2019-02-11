@@ -14,13 +14,27 @@ const sass = require('metalsmith-sass');
 const sitemap = require('metalsmith-sitemap');
 const wordcount = require('metalsmith-word-count');
 
-metalsmith(__dirname)
-  .metadata({
-    year: '2019',
-    sitename: 'jfod.me',
-    description: 'John Foderaro portfolio site',
-  })
-  .source('./src')
+const devBuild = ((process.env.NODE_ENV || '').trim().toLowerCase() !== 'production');
+
+const ms = metalsmith(__dirname);
+
+if (devBuild) {
+  ms.use(browserSync({
+    server: './public',
+    notify: false,
+    browser: 'firefox',
+    open: false,
+    files: [
+      'src/**/*.js',
+      'src/**/*.md',
+      'src/**/*.scss',
+      'layouts/**/*.hbs',
+      'partials/**/*.hbs',
+    ],
+  })).use(debug());
+}
+
+ms.source('./src')
   .destination('./public')
   .clean(true)
   .use(registerHelpers({
@@ -62,20 +76,6 @@ metalsmith(__dirname)
     hostname: 'https://jfod.me',
     lastmod: new Date(),
   }))
-  .use(browserSync({
-    server: './public',
-    notify: false,
-    browser: 'firefox',
-    open: false,
-    files: [
-      'src/**/*.js',
-      'src/**/*.md',
-      'src/**/*.scss',
-      'layouts/**/*.hbs',
-      'partials/**/*.hbs',
-    ],
-  }))
-  .use(debug())
   .build((err) => {
     if (err) {
       console.error(err);
