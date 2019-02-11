@@ -5,7 +5,8 @@
   "main": "build.js",
   "scripts": {
     "test": "mocha",
-    "start": "node build DEBUG=metalsmith:* metalsmith"
+    "start": "node build DEBUG=metalsmith:* metalsmith",
+    "prod": "NODE_ENV=production npm start"
   },
   "author": "John Foderaro",
   "license": "MIT",

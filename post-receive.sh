@@ -2,8 +2,6 @@
 
 SITE=jfod
 
-export NODE_ENV=production
-
 # Clone the upstream repo to a tmp directory
 echo "Cloning upstream repository... "
 git clone /srv/repos/jfod.git/ /var/tmp/$SITE/
