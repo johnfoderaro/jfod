@@ -71,6 +71,7 @@ ms.source('./src')
   .use(permalinks())
   .use(sass({
     outputStyle: 'compressed',
+    includePaths: ['./src/styles'],
   }))
   .use(sitemap({
     hostname: 'https://jfod.me',

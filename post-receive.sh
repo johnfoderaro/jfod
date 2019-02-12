@@ -1,32 +1,44 @@
 #!/bin/bash
 
+set -e
+
 SITE=jfod
 
-# Clone the upstream repo to a tmp directory
-echo "Cloning upstream repository... "
-git clone /srv/repos/jfod.git/ /var/tmp/$SITE/
+# keep track of the last executed command
+trap 'last_command=$current_command; current_command=$BASH_COMMAND' DEBUG
 
-# Install depdencies
+# echo an error message before exiting
+trap 'echo "\"${last_command}\" command failed with exit code $?."' EXIT
+
+# remove previous tmp content in case last build failed
+echo "Removing tmp directory... "
+rm -rf /var/tmp/$SITE/
+
+# clone the upstream repo to a tmp directory
+echo "Cloning upstream repository... "
+git clone /srv/repos/$SITE.git/ /var/tmp/$SITE/
+
+# install depdencies
 echo "Installing npm dependencies... "
 cd /var/tmp/$SITE/
 npm i --production -s --loglevel silent
 
-# Build site
+# build site
 echo "Building website... "
 npm run prod
 
-# Test site
+# test site
 echo "Testing website build... "
 npm test
 
-# Add changes from tmp to www
+# add changes from tmp to www
 echo "Deploying website build... "
-rsync -a /var/tmp/$SITE/ /var/www/$SITE/
+rsync -a /var/tmp/$SITE/public/* /var/www/$SITE/
 
-# Clean up tmp directory
+# clean up tmp directory
 echo "Cleaning up.... "
-rm -rf /var/tmp/jfod/
+rm -rf /var/tmp/$SITE/
 
-# Done
+# done
 echo "Done. '$SITE' successfully deployed."
-exit
+exit 0
